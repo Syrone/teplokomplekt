@@ -1,0 +1,93 @@
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+// @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+// @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/_utilities.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@include font('proxima-nova', normal, 400, '../fonts/ProximaNova-Regular.woff2')
+@include font('proxima-nova', normal, 600, '../fonts/ProximaNova-Bold.woff2')
+
+// GENERAL CSS SETTINGS
+
+/*Value*/
+:root
+	/*Colors*/
+	--primary-color: #008cce
+	--primary-color-hover: #2097cd
+	--title-color-1: #000
+	--title-color-2: #001648
+	--text-color: #556080
+	--placeholder-color: #4e556b
+	--gray: #999
+	--gray-dark: #666
+
+	/*BG Colors*/
+	--primary-bg: 223, 238, 253
+	--primary-light-bg: 238, 245, 255
+	--primary-light-bg2: 230, 239, 252
+
+	/*Font*/
+	--ff-1: proxima-nova, sans-serif
+	--ff-2: -apple-system, BlinkMacSystemFont, Arial, sans-serif
+	--h1: 2.125rem
+	--h2: 1.875rem
+	--h3: 1.75rem
+	--h4: 1.625rem
+	--h5: 1.5rem
+	--fz-1: 1.25rem
+	--fz-2: 1.125rem
+	--fz-3: 1rem
+	--fz-4: .875rem
+	--lh-1: 1.5
+
+::placeholder
+	color: var(--placeholder-color)
+
+::selection
+	background-color: var(--primary-color)
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+html, body
+	height: 100%
+
+body
+	font-family: var(--ff-1)
+	font-size: var(--fz-3)
+	line-height: var(--lh-1)
+	color: var(--text-color)
+	background-color: white
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+
+a
+	font: inherit
+	color: inherit
+	text-decoration-thickness: .5px
+	text-decoration-color: #babfc5
+	text-underline-offset: .15rem
+	transition: color .3s ease, text-decoration-color .3s ease
+	&:hover
+		color: var(--gray)
+		text-decoration-color: var(--gray)

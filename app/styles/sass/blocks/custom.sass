@@ -1,0 +1,84 @@
+/*Обертка всей страницы*/
+.page-wrapper
+	display: grid
+	grid-template-rows: auto 1fr auto
+	height: 100%
+
+/*Header Menu*/
+.header-top
+	--bs-light-rgb: var(--primary-light-bg)
+	padding: 1rem 0
+	.navbar-brand
+		font-size: var(--fz-3)
+		color: var(--title-color-2)
+		margin-right: 2rem
+	.navbar-descr
+		max-width: 150px
+		font-size: var(--fz-4)
+		color: var(--gray)
+	.navbar-nav
+		font-size: var(--fz-3)
+		font-weight: 600
+		color: var(--title-color-2)
+		.nav-link
+			color: inherit
+		.dropdown-toggle::after
+			vertical-align: .175em
+		.nav-item
+			position: relative
+			&::after
+				content: ''
+				width: 1px
+				height: 100%
+				background-color: #ccdce4
+				position: absolute
+				top: 0
+				right: 0
+			&:last-child::after
+				all: unset
+		.nav-link
+			line-height: 1
+			padding: 0 .75rem
+.header-bottom
+	padding: .875rem 0
+	.btn-primary
+		width: 100%
+		max-width: 140px
+		height: 50px
+		letter-spacing: .15em
+		text-align: left
+
+/*Custom button*/
+.btn-link
+	display: flex
+	align-items: center
+	gap: .5rem
+	padding: .5rem
+	font-size: var(--fz-3)
+	color: var(--gray-dark)
+	text-decoration: underline
+	text-decoration-thickness: .5px
+	text-decoration-color: #babfc5
+	text-underline-offset: .15rem
+	transition: color .3s ease, text-decoration-color .3s ease
+	&:hover
+		color: var(--gray)
+		text-decoration-color: var(--gray)
+	&:focus
+		box-shadow: none
+
+.btn-mail
+	color: var(--primary-color)
+	text-decoration-color: #a4cbea
+	text-decoration-thickness: .5px
+
+/*Reused button*/
+.btn-primary
+	height: 50px
+	font-size: var(--fz-3)
+	font-weight: 600
+	background-color: var(--primary-color)
+	border-color: var(--primary-color)
+	&:hover, &:focus
+		border-color: var(--primary-color-hover)
+		background-color: var(--primary-color-hover)
