@@ -4,7 +4,7 @@ $gutter: $grid-gutter-width
 
 // IMPORT SECTION
 
-// @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/bootstrap.scss' // Bootstrap Reboot collection
 // @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
 // @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
 // @import 'node_modules/bootstrap/scss/_utilities.scss' // Optional Bootstrap Utilites
@@ -27,7 +27,10 @@ $gutter: $grid-gutter-width
 :root
 	/*Colors*/
 	--primary-color: #008cce
-	--primary-color-hover: #2097cd
+	--primary-color-light: #00cef6
+	--yellow-color: #fec400
+	--orange-color: #ff8001
+	--crimson-color: #b03001
 	--title-color-1: #000
 	--title-color-2: #001648
 	--text-color: #556080
@@ -54,8 +57,13 @@ $gutter: $grid-gutter-width
 	--fz-4: .875rem
 	--lh-1: 1.5
 
+	/*BoxShadow*/
+	--bsh-1: 0px 2px 12px 0px rgba(0, 22, 72, 0.3)
+	--bsh-2: 0px 0px 40px 20px rgba(0, 22, 72, 0.3)
+
 ::placeholder
 	color: var(--placeholder-color)
+	text-overflow: ellipsis
 
 ::selection
 	background-color: var(--primary-color)

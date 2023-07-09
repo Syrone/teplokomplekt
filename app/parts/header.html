@@ -14,48 +14,881 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="headerMenuTop">
-				<div class="d-flex align-items-center">
-					<div class=" navbar-collapse-item navbar-descr lh-sm">
+				<div>
+					<div class="d-none d-xl-block navbar-collapse-item navbar-descr lh-sm">
 						Оборудование для
 						инженерных систем
 					</div>
 
 					<button class="btn btn-link navbar-collapse-item">
-						<img src="./images/dist/map.png" width="18" alt="Карта">Комсомольск-на-Амуре
+						<img src="./images/dist/map.png" width="18" alt="Карта">
+						<span>Комсомольск-на-Амуре</span>
 					</button>
+
+					<ul class="navbar-nav navbar-collapse-item order-1 order-sm-0">
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="#">
+								Компания
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Бренды
+							</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link" href="#">
+								Объекты
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Контакты
+							</a>
+						</li>
+					</ul>
+
+					<a class="btn-mail" href="mailto:info@teplokomplect.ru">info@teplokomplect.ru</a>
+
 				</div>
-
-				<ul class="navbar-nav navbar-collapse-item ms-5">
-					<li class="nav-item">
-						<a class="nav-link" aria-current="page" href="#">
-							Компания
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-							Бренды
-						</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link" href="#">
-							Объекты
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">
-							Контакты
-						</a>
-					</li>
-				</ul>
-
-				<a class="btn-mail ms-4" href="mailto:info@@teplokomplect.ru">info@@teplokomplect.ru</a>
 			</div>
 		</div>
 	</nav>
 
 	<div class="header-bottom">
 		<div class="container">
-			<button class="btn btn-lg btn-primary text-uppercase">Каталог</button>
+			<div class="row g-2">
+				<div class="col-xl-6 col-lg-5 col-md-6 col-sm-7 col-10 d-flex align-items-center gap-3">
+					<button class="btn btn-lg btn-primary text-uppercase collapsed" type="button" data-bs-toggle="collapse"
+						data-bs-target="#catalogMenuCollapse" aria-expanded="false" aria-controls="catalogMenuCollapse">
+						Каталог
+					</button>
+					<form class="header-bottom-form d-flex position-relative">
+						<input class="form-control form-control-lg" type="search"
+							placeholder="Поиск по названию, артикулу, бренду..." aria-label="Search">
+						<button class="btn btn-lg btn-icon position-absolute end-0" type="submit">
+							<img src="./images/dist/search.png" width="22" alt="Иконка">
+						</button>
+					</form>
+				</div>
+				<div class="col-xl-6 col-lg-7 col-md-6 col-sm-5 col-2">
+					<div class="row g-lg-3 g-2">
+						<div class="col-lg-7 col-5 d-none d-md-block">
+							<div class="row g-2">
+								<div class="col-lg-6">
+									<button type="button" class="btn btn-lg btn-location" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-location" data-bs-placement="bottom" data-bs-offset="45,10" title="Указать адрес для отображения точной цены товаров">
+										<div class="btn-location-text">
+											Адрес доставки:
+											<span>Пермь, ул. Победа</span>
+										</div>
+										<img src="./images/dist/package.png" width="18" alt="icon">
+									</button>
+								</div>
+								<div class="col-6 d-none d-lg-block">
+									<button type="button" class="btn btn-lg btn-location" data-bs-toggle="tooltip" data-bs-custom-class="tooltip-location" data-bs-placement="bottom" data-bs-offset="45,10" title="Указать адрес для отображения точной цены товаров">
+										<div class="btn-location-text">
+											Ближ. доставка:
+											<span>сегодня</span>
+										</div>
+										<img src="./images/dist/truck.png" width="22" alt="icon">
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-5 col-md-7 d-flex justify-content-sm-between justify-content-end">
+							<div class="block-phone d-none d-sm-block">
+								<span>8 800 100 58 86</span>
+								<button class="btn btn-link">Заказать звонок</button>
+							</div>
+
+							<div class="cart" tabindex="0">
+								<img src="./images/dist/cart.png" width="30" alt="Иконка">
+								<span>Корзина</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="catalog-collapse collapse multi-collapse" id="catalogMenuCollapse">
+		<div class="container-fluid">
+			<div class="catalog-menu">
+				<div class="row">
+					<div class="col-xl-5 col-sm-4">
+						<ul class="list-group" id="catalogMenu">
+							<li class="catalog-list list-group-item list-group-item-action" aria-current="true" >
+								<span class="catalog-item">
+									Насосное оборудование
+									<div class="arrow">
+										<span class="arrow-left"></span>
+										<span class="arrow-right"></span>
+									</div>
+								</span>
+								<div class="list-group-inner">
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">1</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">2</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">3</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">4</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">5</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">6</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">7</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">8</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">9</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">10</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">11</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">12</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">13</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">14</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-list list-group-item list-group-item-action" aria-current="true" >
+								<span class="catalog-item">
+									Теплообменное оборудование
+									<div class="arrow">
+										<span class="arrow-left"></span>
+										<span class="arrow-right"></span>
+									</div>
+								</span>
+								<div class="list-group-inner">
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">1</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">2</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">3</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">4</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">5</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">6</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">7</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">8</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">9</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">10</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">11</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">12</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">13</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">14</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-list list-group-item list-group-item-action active" aria-current="true" >
+								<span class="catalog-item">
+									Трубопроводная арматура
+									<div class="arrow">
+										<span class="arrow-left"></span>
+										<span class="arrow-right"></span>
+									</div>
+								</span>
+								<div class="list-group-inner">
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">Шаровые краны</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">Латунные шаровые краны Danfoss</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">Запорно-регулирующие краны</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">Поворотные затворы и редукторы</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">Шиберные затворы</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">Фильтры</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">Компенсаторы</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">Задвижки с обрезиненным клином(чугунные)</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">Гибкие вставки (виброкомпенсаторы) Фланцы и фитинги</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">Воздухоотводники</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">Вантузы</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">Фасонные элементы</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">Трубопроводная арматура Danfoss</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">Трубопроводная арматура Dendor</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-list list-group-item list-group-item-action" aria-current="true" >
+								<span class="catalog-item">
+									Клапан для систем отопления
+									<div class="arrow">
+										<span class="arrow-left"></span>
+										<span class="arrow-right"></span>
+									</div>
+								</span>
+								<div class="list-group-inner">
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">1</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">2</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">3</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">4</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">5</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">6</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">7</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">8</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">9</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">10</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">11</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">12</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">13</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">14</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-list list-group-item list-group-item-action" aria-current="true" >
+								<span class="catalog-item">
+									Компрессор
+									<div class="arrow">
+										<span class="arrow-left"></span>
+										<span class="arrow-right"></span>
+									</div>
+								</span>
+								<div class="list-group-inner">
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">1</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">2</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">3</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">4</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">5</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">6</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">7</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">8</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">9</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">10</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">11</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">12</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">13</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">14</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-list list-group-item list-group-item-action" aria-current="true" >
+								<span class="catalog-item">
+									Промышленная автоматика
+									<div class="arrow">
+										<span class="arrow-left"></span>
+										<span class="arrow-right"></span>
+									</div>
+								</span>
+								<div class="list-group-inner">
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">1</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">2</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">3</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">4</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">5</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">6</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">7</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">8</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">9</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">10</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">11</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">12</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">13</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">14</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-list list-group-item list-group-item-action" aria-current="true" >
+								<span class="catalog-item">
+									Частотные преобразователи VEDA MC
+									<div class="arrow">
+										<span class="arrow-left"></span>
+										<span class="arrow-right"></span>
+									</div>
+								</span>
+								<div class="list-group-inner">
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">1</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">2</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">3</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">4</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">5</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">6</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">7</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">8</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">9</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">10</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">11</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">12</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">13</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">14</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-list list-group-item list-group-item-action" aria-current="true" >
+								<span class="catalog-item">
+									Автоматика
+									<div class="arrow">
+										<span class="arrow-left"></span>
+										<span class="arrow-right"></span>
+									</div>
+								</span>
+								<div class="list-group-inner">
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">1</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">2</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">3</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">4</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">5</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">6</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">7</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">8</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">9</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">10</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">11</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">12</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">13</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">14</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-list list-group-item list-group-item-action" aria-current="true" >
+								<span class="catalog-item">
+									Оборудование для помывки
+									<div class="arrow">
+										<span class="arrow-left"></span>
+										<span class="arrow-right"></span>
+									</div>
+								</span>
+								<div class="list-group-inner">
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">1</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">2</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">3</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">4</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">5</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">6</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">7</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">8</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">9</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">10</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">11</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">12</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">13</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">14</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-list list-group-item list-group-item-action" aria-current="true" >
+								<span class="catalog-item">
+									Счетчики тепла и диспетчеризация
+									<div class="arrow">
+										<span class="arrow-left"></span>
+										<span class="arrow-right"></span>
+									</div>
+								</span>
+								<div class="list-group-inner">
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">1</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">2</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">3</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">4</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">5</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">6</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">7</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">8</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">9</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">10</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">11</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">12</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">13</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">14</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-list list-group-item list-group-item-action" aria-current="true" >
+								<span class="catalog-item">
+									Вентилиционные оборудование
+									<div class="arrow">
+										<span class="arrow-left"></span>
+										<span class="arrow-right"></span>
+									</div>
+								</span>
+								<div class="list-group-inner">
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">1</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">2</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">3</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">4</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">5</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">6</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">7</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">8</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">9</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">10</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">11</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">12</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">13</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">14</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-list list-group-item list-group-item-action" aria-current="true" >
+								<span class="catalog-item">
+									Пожарное оборудование
+									<div class="arrow">
+										<span class="arrow-left"></span>
+										<span class="arrow-right"></span>
+									</div>
+								</span>
+								<div class="list-group-inner">
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">1</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">2</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">3</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">4</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">5</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">6</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">7</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">8</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">9</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">10</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">11</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">12</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">13</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">14</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="catalog-list list-group-item list-group-item-action" aria-current="true" >
+								<span class="catalog-item">
+									Расширительные баки
+									<div class="arrow">
+										<span class="arrow-left"></span>
+										<span class="arrow-right"></span>
+									</div>
+								</span>
+								<div class="list-group-inner">
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">1</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">2</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">3</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">4</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">5</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">6</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">7</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">8</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">9</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">10</a>
+										</li>
+									</ul>
+									<ul class="list-group">
+										<li class="list-group-item list-group-item-action">
+											<a href="#">11</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">12</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">13</a>
+										</li>
+										<li class="list-group-item list-group-item-action">
+											<a href="#">14</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </header>

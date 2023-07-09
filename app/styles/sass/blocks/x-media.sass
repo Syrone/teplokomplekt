@@ -1,0 +1,165 @@
+@include media-breakpoint-down(xxl)
+	/*Catalog Menu*/
+	.catalog-menu
+		max-width: 1170px
+		.list-group
+			--bs-list-group-item-padding-x: 1.7rem
+
+@include media-breakpoint-down(xl)
+	/*Header Menu*/
+	.header
+		&-top
+		&-bottom
+			.block-phone
+				padding: 0
+			.btn-primary
+				max-width: max-content
+
+	/*Catalog Menu*/
+	.catalog-menu
+		max-width: 1000px
+		.list-group
+			--bs-list-group-item-padding-x: 1.4rem
+			&-inner
+				width: 67%
+				left: 33%
+				padding: var(--list-group-padding-y) 0
+
+@include media-breakpoint-down(lg)
+	/*Header Menu*/
+	.header
+		&-top
+			.navbar-collapse
+				&.show
+					padding: 1rem 0 0
+				.btn-link
+					padding: 0
+			.navbar-nav
+				flex-direction: row
+
+	/*Catalog Menu*/
+	.catalog-menu
+		max-width: 780px
+		.list-group
+			&-inner
+				grid-template-columns: repeat(2, 1fr)
+
+@include media-breakpoint-down(md)
+	:root
+		/*Font*/
+		--h1: 1.75rem
+		--h2: 1.625rem
+		--h3: 1.5rem
+		--h4: 1.25rem
+		--h5: 1.125rem
+		--fz-1: 1rem
+		--fz-2: .875rem
+		--fz-3: .75rem
+		--fz-4: .675rem
+
+	/*Header Menu*/
+	.header
+		&-top
+			padding: .25rem 0
+			.navbar-collapse
+				&.show
+					padding: 1rem 0
+				.btn-link
+					max-width: 100px
+					gap: .25rem
+					span
+						text-overflow: ellipsis
+						white-space: nowrap
+						overflow: hidden
+					img
+						width: 12px
+
+		&-bottom
+			--menu-bot-height: 40px
+			padding: .35rem 0
+			&-form
+				--form-width-btn: 30px
+				.btn-icon img
+					width: 16px
+
+	/*Catalog Menu*/
+	.catalog-collapse
+		margin-top: -.375rem
+	.catalog-menu
+		max-width: 610px
+		.list-group
+			&-inner
+				.list-group
+					--bs-list-group-item-padding-y: 0.5rem
+
+@include media-breakpoint-down(sm)
+	/*Header Menu*/
+	.header
+		&-top
+			.navbar-collapse
+				& > div
+					flex-wrap: wrap-reverse
+					gap: .5rem
+				.btn-link
+					max-width: unset
+			.navbar-descr
+				width: 100%
+			.navbar-nav
+				.nav-item:first-child
+					.nav-link
+						padding-left: 0
+
+	/*Catalog Menu*/
+	.catalog-menu
+		max-width: 610px
+		.list-group
+			border: none
+			&-inner
+				width: 100%
+				max-height: 0
+				padding: 0
+				position: static
+				border-top: 1px solid #dee6f1
+				overflow: hidden
+				transition: max-height .5s ease-in-out, padding .5s ease-in-out
+				.list-group
+					--bs-list-group-item-padding-x: 1.4rem
+					& > li a
+						max-width: unset
+	.catalog-list
+		&.active
+			.list-group-inner
+				max-height: max-content
+				padding: 0 0 var(--list-group-padding-y)
+			.arrow
+				&-left, &-right
+					width: 68%
+				&-left
+					transform: rotate(-45deg) translateY(-50%)
+				&-right
+					transform: rotate(45deg) translateY(-50%)
+	.catalog-item
+		display: flex
+		align-items: center
+		justify-content: space-between
+		.arrow
+			width: 1rem
+			height: 1rem
+			background: transparent
+			transform: unset
+			position: relative
+			inset: auto
+			opacity: 1
+			visibility: visible
+			&-left, &-right
+				width: 60%
+				height: 2px
+				top: 50%
+				left: auto
+			&-left
+				left: 0
+				transform: rotate(45deg) translateY(-50%)
+			&-right
+				right: 0
+				transform: rotate(-45deg) translateY(-50%)
+
