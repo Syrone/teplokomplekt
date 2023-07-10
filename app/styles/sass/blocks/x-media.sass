@@ -46,6 +46,13 @@
 			--catalog-item-padding-y: 1rem
 	/* (End) Catalog Section */
 
+	/* (Start) Advantages Section */
+	.section-advantages
+		&-content
+			padding-left: 2rem
+			column-gap: 1.5rem
+	/* (End) Advantages Section */
+
 @include media-breakpoint-down(lg)
 	:root
 		--swiper-pagination-bottom: .25rem
@@ -89,6 +96,21 @@
 			--catalog-item-padding-y: .75rem
 			grid-template-columns: repeat(4, 1fr)
 	/* (End) Catalog Section */
+
+	/* (Start) Advantages Section */
+	.section-advantages
+		&-title
+			padding: 2rem 1.875rem
+			h2, p
+				max-width: unset
+		&-content
+			background-color: rgb(var(--blue-light-75))
+			padding: 1rem 1.875rem
+			column-gap: 1.5rem
+	/* (End) Advantages Section */
+
+
+
 
 
 	/* (Start) Footer */
@@ -180,6 +202,15 @@
 		&-wrapper
 			grid-template-columns: repeat(3, 1fr)
 	/* (End) Catalog Section */
+
+	/* (Start) Advantages Section */
+	.section-advantages
+		&-title
+			padding: 2rem 1.875rem 0
+		&-image
+			img
+				height: 2.5rem
+	/* (End) Advantages Section */
 
 @include media-breakpoint-down(sm)
 	/* (Start) Header Menu*/
@@ -281,6 +312,23 @@
 		&-wrapper
 			grid-template-columns: repeat(2, 1fr)
 	/* (End) Catalog Section */
+
+	/* (Start) Advantages Section */
+	.section-advantages
+		&-title
+			padding: 2rem .75rem 0
+		&-content
+			grid-template-columns: repeat(2, 1fr)
+			padding: 1rem .75rem
+			gap: 2rem 1rem
+		&-image
+			img
+				height: 2.5rem
+		&-text
+			max-width: 140px
+	/* (End) Advantages Section */
+
+
 
 
 	/* (Start) Footer */

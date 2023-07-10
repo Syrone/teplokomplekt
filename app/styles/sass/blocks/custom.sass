@@ -7,7 +7,7 @@ main
 	flex: 1 1 auto
 /* (End) Обертка всей страницы*/
 
-/* (Start) Titles */
+/* (Start) Titles and Text */
 h1, h2, h3, h4, h5
 	font-weight: bold
 	color: var(--title-color-1)
@@ -21,7 +21,10 @@ h1, h2, h3, h4, h5
 	font-size: var(--h4)
 .h5
 	font-size: var(--h5)
-/* (End) Titles */
+
+p
+	line-height: normal
+/* (End) Titles and Text */
 
 /* (Start) Header Menu*/
 .header
@@ -456,15 +459,30 @@ h1, h2, h3, h4, h5
 /* (Start) Background Decor */
 .backdrops
 	position: relative
-	&::after
+	&-left::after, &-right::before
 		content: ''
-		width: 300px
-		height: 100%
-		background-color: rgb(var(--blue-light-25))
+		width: 50%
 		position: absolute
-		top: 0
-		bottom: 0
-		right: -60px
+		top: var(--section-padding-y)
+		bottom: var(--section-padding-y)
+		z-index: -1
+	&-left
+		&::after
+			background-color: rgb(var(--blue-light-25))
+			left: 0
+		&-mini::after
+			content: ''
+			width: 300px
+			height: 100%
+			background-color: rgb(var(--blue-light-25))
+			position: absolute
+			top: 0
+			bottom: 0
+			right: -60px
+			z-index: -1
+	&-right::before
+		background-color: rgb(var(--blue-light-75))
+		right: 0
 /* (End) Background Decor */
 
 /* (Start) Main Section */
@@ -518,7 +536,6 @@ h1, h2, h3, h4, h5
 /* (End) Main Section */
 
 /* (Start) Catalog Section */
-// .section-catalog
 .section-catalog
 	&-wrapper
 		--catalog-item-padding-x: 1.125rem
@@ -583,9 +600,35 @@ h1, h2, h3, h4, h5
 				opacity: 1
 				&::before
 					opacity: 0
-
-
 /* (End) Catalog Section */
+
+/* (Start) Advantages Section */
+.section-advantages
+	&-wrapper
+		background-color: white
+	&-title
+		width: 100%
+		height: 100%
+		background-color: rgb(var(--blue-light-75))
+		padding: 3.125rem 1.875rem
+		h2, p
+			max-width: 220px
+	&-content
+		display: grid
+		grid-template-columns: repeat(3, 1fr)
+		row-gap: 3rem
+		padding-left: 3rem
+	&-image
+		margin-bottom: 1rem
+		img
+			width: auto
+			height: 3.125rem
+	&-text
+		width: 100%
+		max-width: 200px
+		line-height: normal
+		color: var(--title-color-2)
+/* (End) Advantages Section */
 
 /* (Start) Footer */
 .footer
