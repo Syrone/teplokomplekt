@@ -4,7 +4,8 @@ $gutter: $grid-gutter-width
 
 // IMPORT SECTION
 
-@import 'node_modules/bootstrap/scss/bootstrap.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/bootstrap.scss' // Bootstrap 5
+@import 'node_modules/swiper/swiper-bundle.min' // SwiperJS v10.0.4
 // @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
 // @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
 // @import 'node_modules/bootstrap/scss/_utilities.scss' // Optional Bootstrap Utilites
@@ -34,14 +35,15 @@ $gutter: $grid-gutter-width
 	--title-color-1: #000
 	--title-color-2: #001648
 	--text-color: #556080
+	--text-color-light: #858b9d
 	--placeholder-color: #4e556b
 	--gray: #999
 	--gray-dark: #666
 
 	/*BG Colors*/
-	--primary-bg: 223, 238, 253
-	--primary-light-bg: 238, 245, 255
-	--primary-light-bg2: 230, 239, 252
+	--blue-light-25: 223, 238, 253
+	--blue-light-50: 230, 239, 252
+	--blue-light-75: 238, 245, 255
 
 	/*Font*/
 	--ff-1: proxima-nova, sans-serif
@@ -60,6 +62,27 @@ $gutter: $grid-gutter-width
 	/*BoxShadow*/
 	--bsh-1: 0px 2px 12px 0px rgba(0, 22, 72, 0.3)
 	--bsh-2: 0px 0px 40px 20px rgba(0, 22, 72, 0.3)
+
+	/* Gradient */
+	--gradient-primary: linear-gradient(270deg, rgb(120, 198, 252) 0%, rgb(200, 232, 255) 100%)
+	--gradient-primary-hover: linear-gradient(90deg, rgb(120, 198, 252) 0%, rgb(200, 232, 255) 100%)
+
+	/*Customize Var SwiperJS*/
+	--swiper-navigation-size: 1.875rem
+	--swiper-navigation-color: #008cce
+	--swiper-navigation-top-offset: 0
+	--swiper-pagination-bullet-width: .75rem
+	--swiper-pagination-bullet-height: .75rem
+	--swiper-pagination-bottom: 1rem
+	--swiper-pagination-color: #aaccef
+	--swiper-pagination-bullet-inactive-color: white
+	--swiper-pagination-bullet-border-radius: .1rem
+	--swiper-pagination-border-width: 1px
+	--swiper-pagination-border-style: solid
+	--swiper-pagination-border-color: #aaccef
+	--swiper-pagination-bullet-opacity: 1
+	--swiper-pagination-bullet-inactive-opacity: 1
+	
 
 ::placeholder
 	color: var(--placeholder-color)

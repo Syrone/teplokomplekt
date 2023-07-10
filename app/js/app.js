@@ -1,3 +1,5 @@
+import Swiper from "swiper/bundle";
+
 document.addEventListener("DOMContentLoaded", () => {
   /* (Start) Header Catalog Menu*/
   const menuCatalog = document.getElementById("catalogMenu");
@@ -72,4 +74,20 @@ document.addEventListener("DOMContentLoaded", () => {
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
+
+  /* (Start) Swiper Main */
+  const swiperMain = new Swiper(".swiper-main", {
+    loop: true,
+
+    pagination: {
+      el: ".swiper-main-pagination",
+      clickable: true,
+    },
+
+    navigation: {
+      nextEl: ".swiper-main-next",
+      prevEl: ".swiper-main-prev",
+    },
+  });
+  /* (End) Swiper Main */
 });

@@ -1,13 +1,31 @@
 /* (Start) Обертка всей страницы*/
 .page-wrapper
-	display: grid
-	grid-template-rows: auto 1fr auto
-	height: 100%
+	display: flex
+	flex-direction: column
+	min-height: 100%
+main
+	flex: 1 1 auto
 /* (End) Обертка всей страницы*/
+
+
+/* (Start) Titles */
+h1, h2, h3, h4, h5
+	font-weight: bold
+	color: var(--title-color-1)
+.h1
+	font-size: var(--h1)
+.h2
+	font-size: var(--h2)
+.h3
+	font-size: var(--h3)
+.h4
+	font-size: var(--h4)
+.h5
+	font-size: var(--h5)
+/* (End) Titles */
 
 /* (Start) Header Menu*/
 .header-top
-	--bs-light-rgb: var(--primary-light-bg)
 	padding: 1rem 0
 	.navbar-brand
 		font-size: var(--fz-3)
@@ -24,31 +42,6 @@
 			align-items: center
 			justify-content: space-between
 			flex-grow: 1
-	.navbar-nav
-		font-size: var(--fz-3)
-		color: var(--title-color-2)
-		.nav-link
-			color: inherit
-			line-height: 1
-			padding: 0 .75rem
-		.dropdown-toggle::after
-			vertical-align: .175em
-		.nav-item
-			position: relative
-			&::after
-				content: ''
-				width: 1px
-				height: 100%
-				background-color: #ccdce4
-				position: absolute
-				top: 0
-				right: 0
-			&:last-child::after
-				all: unset
-		.nav-link
-			transition: text-shadow .3s ease
-			&:hover
-				text-shadow: 0 0 1px currentColor
 .header-bottom
 	--menu-bot-height: 50px
 	padding: .875rem 0
@@ -293,6 +286,33 @@
 		background-color: var(--location-bg)
 		border-color: transparent
 		box-shadow: none
+
+.btn-gradient
+	--bs-btn-height: 2.5rem
+	--bs-btn-padding-x: 1.25rem
+	--bs-btn-padding-y: 0
+	--bs-btn-font-size: var(--fz-3)
+	--bs-btn-color: var(--title-color-2)
+	--bs-btn-hover-color: var(--title-color-2)
+	--bs-btn-active-color: white
+	--bs-btn-bg: var(--gradient-primary)
+	--bs-btn-hover-bg: var(--gradient-primary-hover)
+	--bs-btn-active-bg: var(--primary-color)
+	--bs-btn-border-width: 0
+	--bs-btn-border-color: transparent
+	width: 100%
+	max-width: 160px
+	height: var(--bs-btn-height)
+	display: flex
+	align-items: center
+	background: var(--bs-btn-bg)
+	&:hover
+		background: var(--bs-btn-hover-bg)
+	&:active
+		background: var(--bs-btn-active-bg)
+
+	
+	
 /* (End) Custom button*/
 
 /* (Start) Reused button*/
@@ -312,6 +332,11 @@
 	&:focus-visible
 		box-shadow: none
 /* (End) Reused button*/
+
+/* (Start) Reused Var Color */
+.bg-light
+	--bs-light-rgb: var(--blue-light-75)
+/* (End) Reused Var Color */
 
 /* (Start) Reused input*/
 .form-control
@@ -337,6 +362,40 @@
 		line-height: 1
 		padding: 0
 /* (End) Block phone*/
+
+/* (Start) Block nav menu */
+.block-nav
+	flex-direction: row
+	font-size: var(--fz-3)
+	color: var(--title-color-2)
+	.dropdown-toggle::after
+		vertical-align: .175em
+	.nav-item
+		position: relative
+		&::after
+			content: ''
+			width: 1px
+			height: 100%
+			background-color: #ccdce4
+			position: absolute
+			top: 0
+			right: 0
+		&:first-child
+			.nav-link
+				padding-left: 0
+		&:last-child
+			.nav-link
+				padding-right: 0
+			&::after
+				all: unset
+	.nav-link
+		color: inherit
+		line-height: 1
+		padding: 0 .75rem
+		transition: text-shadow .3s ease
+		&:hover
+			text-shadow: 0 0 1px currentColor
+/* (End) Block nav menu */
 
 /* (Start) Block Cart*/
 .cart
@@ -372,3 +431,68 @@
 		box-shadow: var(--bsh-1)
 /* (End) Customize Tooltip*/
 
+/* (Start) Customize SwiperJS*/
+.swiper-button-next, .swiper-button-prev
+	height: 100%
+	margin-top: unset
+/* (End) Customize SwiperJS*/
+
+/* (Start) Section */
+.section
+	padding: 1.875rem 0
+/* (End) Section */
+
+/* (Start) Wrapper SwiperJS */
+.wrapper-carousel
+	position: relative
+/* (End) Wrapper SwiperJS */
+
+/* (Start) Main Section */
+// .section-main
+
+.swiper-main
+	--swiper-padding-y: 2.5rem
+	--swiper-padding-x: 2.5rem
+	width: 90%
+	margin: 0 auto
+	background-color: rgb(var(--blue-light-75))
+.main-slide
+	&-content
+		padding: 0 var(--swiper-padding-x) var(--swiper-padding-y)
+		h2
+			margin-bottom: 2rem
+			span
+				display: block
+				font-size: var(--fz-2)
+				font-weight: normal
+				line-height: var(--lh-1)
+				margin-top: .4rem
+	&-image
+		position: relative
+		img
+			width: 100%
+			height: auto
+			object-fit: cover
+
+/* (Start) Main Pagination */
+.swiper-main
+	& > .swiper-main-pagination
+		width: auto
+		left: var(--swiper-padding-x)
+		.swiper-pagination-bullet
+			border: var(--swiper-pagination-border-width) var(--swiper-pagination-border-style) var(--swiper-pagination-border-color)
+/* (End) Main Pagination */
+/* (End) Main Section */
+
+/* (Start) Footer */
+.footer
+	&-top
+		padding: 1.5rem 0 1rem
+	&-bottom
+		padding: 1.875rem 0
+		background-color: rgb(var(--blue-light-50))
+	&-copy
+		font-size: var(--fz-4)
+		line-height: normal
+		color: var(--text-color-light)
+/* (End) Footer */

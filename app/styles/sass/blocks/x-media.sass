@@ -1,21 +1,23 @@
 @include media-breakpoint-down(xxl)
-	/*Catalog Menu*/
+	/* (Start) Catalog Menu*/
 	.catalog-menu
 		max-width: 1170px
 		.list-group
 			--bs-list-group-item-padding-x: 1.7rem
+	/* (End) Catalog Menu*/
 
 @include media-breakpoint-down(xl)
-	/*Header Menu*/
+	/* (Start) Header Menu*/
 	.header
-		&-top
+		// &-top
 		&-bottom
 			.block-phone
 				padding: 0
 			.btn-primary
 				max-width: max-content
+	/* (End) Header Menu*/
 
-	/*Catalog Menu*/
+	/* (Start) Catalog Menu*/
 	.catalog-menu
 		max-width: 1000px
 		.list-group
@@ -24,9 +26,21 @@
 				width: 67%
 				left: 33%
 				padding: var(--list-group-padding-y) 0
+	/* (End) Catalog Menu*/
+
+	/* (Start) Block Phone */
+	.block-phone
+		padding: 0
+	/* (End) Block Phone */
+
+	/* (Start) Block Nav Menu */
+	.block-nav
+		.nav-link
+			padding: 0 .5rem
+	/* (End) Block Nav Menu */
 
 @include media-breakpoint-down(lg)
-	/*Header Menu*/
+	/* (Start) Header Menu*/
 	.header
 		&-top
 			.navbar-collapse
@@ -36,13 +50,36 @@
 					padding: 0
 			.navbar-nav
 				flex-direction: row
+	/* (End) Header Menu*/
 
-	/*Catalog Menu*/
+	/* (Start) Catalog Menu*/
 	.catalog-menu
 		max-width: 780px
 		.list-group
 			&-inner
 				grid-template-columns: repeat(2, 1fr)
+	/* (End) Catalog Menu*/
+
+
+
+
+	/* (Start) Footer */
+	.footer
+		&-top
+			.block-nav
+				display: grid
+				grid-template-columns: repeat(4, max-content)
+				justify-content: space-between
+				gap: .5rem
+				margin-right: 1rem
+				.nav-item
+					&:after
+						all: unset
+				.nav-link
+					padding: 0
+			.block-phone
+				justify-content: center
+	/* (End) Footer */
 
 @include media-breakpoint-down(md)
 	:root
@@ -57,7 +94,7 @@
 		--fz-3: .75rem
 		--fz-4: .675rem
 
-	/*Header Menu*/
+	/* (Start) Header Menu*/
 	.header
 		&-top
 			padding: .25rem 0
@@ -81,8 +118,9 @@
 				--form-width-btn: 30px
 				.btn-icon img
 					width: 16px
+	/* (End) Header Menu*/
 
-	/*Catalog Menu*/
+	/* (Start) Catalog Menu*/
 	.catalog-collapse
 		margin-top: -.375rem
 	.catalog-menu
@@ -91,9 +129,10 @@
 			&-inner
 				.list-group
 					--bs-list-group-item-padding-y: 0.5rem
+	/* (End) Catalog Menu*/
 
 @include media-breakpoint-down(sm)
-	/*Header Menu*/
+	/* (Start) Header Menu*/
 	.header
 		&-top
 			.navbar-collapse
@@ -108,8 +147,9 @@
 				.nav-item:first-child
 					.nav-link
 						padding-left: 0
+	/* (End) Header Menu*/
 
-	/*Catalog Menu*/
+	/* (Start) Catalog Menu*/
 	.catalog-menu
 		max-width: 610px
 		.list-group
@@ -162,4 +202,17 @@
 			&-right
 				right: 0
 				transform: rotate(-45deg) translateY(-50%)
+	/* (End) Catalog Menu*/
 
+
+
+	/* (Start) Footer */
+	.footer
+		&-top
+			.block-nav
+				margin-right: 0
+		&-bottom
+			.btn-mail
+				display: block
+				text-align: right
+	/* (End) Footer */
