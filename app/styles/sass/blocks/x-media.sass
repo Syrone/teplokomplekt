@@ -39,6 +39,13 @@
 			padding: 0 .5rem
 	/* (End) Block Nav Menu */
 
+	/* (Start) Catalog Section */
+	.section-catalog
+		&-wrapper
+			--catalog-item-padding-x: 1rem
+			--catalog-item-padding-y: 1rem
+	/* (End) Catalog Section */
+
 @include media-breakpoint-down(lg)
 	:root
 		--swiper-pagination-bottom: .25rem
@@ -75,6 +82,13 @@
 				margin-top: .2rem
 	/* (End) Main Section */
 
+	/* (Start) Catalog Section */
+	.section-catalog
+		&-wrapper
+			--catalog-item-padding-x: .75rem
+			--catalog-item-padding-y: .75rem
+			grid-template-columns: repeat(4, 1fr)
+	/* (End) Catalog Section */
 
 
 	/* (Start) Footer */
@@ -160,6 +174,12 @@
 		h2
 			margin-bottom: .5rem
 	/* (End) Main Section */
+
+	/* (Start) Catalog Section */
+	.section-catalog
+		&-wrapper
+			grid-template-columns: repeat(3, 1fr)
+	/* (End) Catalog Section */
 
 @include media-breakpoint-down(sm)
 	/* (Start) Header Menu*/
@@ -256,6 +276,11 @@
 	/* (End) Main Pagination */
 	/* (End) Main Section */
 
+	/* (Start) Catalog Section */
+	.section-catalog
+		&-wrapper
+			grid-template-columns: repeat(2, 1fr)
+	/* (End) Catalog Section */
 
 
 	/* (Start) Footer */

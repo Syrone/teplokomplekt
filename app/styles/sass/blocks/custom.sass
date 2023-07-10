@@ -517,6 +517,76 @@ h1, h2, h3, h4, h5
 /* (End) Main Pagination */
 /* (End) Main Section */
 
+/* (Start) Catalog Section */
+// .section-catalog
+.section-catalog
+	&-wrapper
+		--catalog-item-padding-x: 1.125rem
+		--catalog-item-padding-y: 1.125rem
+		--catalog-item-offset: 2px
+		--catalog-item-offset-color: #cbe9fe
+		--catalog-item-offset-color-active: var(--primary-color)
+		--catalog-item-title-color: var(--title-color-2)
+		--catalog-item-title-color-active: var(--primary-color)
+		--catalog-item-img-gradien: linear-gradient(90deg, transparent 0%, rgb(255, 255, 255) 100%)
+		display: grid
+		grid-template-columns: repeat(5, 1fr)
+		gap: var(--catalog-item-offset)
+		margin: var(--catalog-item-offset)
+	&-item
+		min-height: 100px
+		display: flex
+		justify-content: space-between
+		background-color: white
+		padding: var(--catalog-item-padding-y) var(--catalog-item-padding-x)
+		cursor: pointer
+		text-decoration: none
+		position: relative
+		&-title
+			max-width: 160px
+			color: var(--catalog-item-title-color)
+			line-height: normal
+			text-decoration: none
+			transition: color .3s ease
+		&-image
+			align-self: flex-end
+			flex-shrink: 0
+			// margin-right: calc( (var(--catalog-item-padding-x) * (-1)) + .125rem)
+			// margin-bottom: calc( var(--catalog-item-padding-y) * (-1) )
+			position: absolute
+			right: .125rem
+			bottom: 0
+			opacity: 0.5
+			transition: opacity .3s ease
+			&::before
+				content: ''
+				background: var(--catalog-item-img-gradien)
+				position: absolute
+				inset: 0
+				opacity: 1
+				transition: opacity .3s ease
+		&::after
+			content: ''
+			background-color: var(--catalog-item-offset-color)
+			position: absolute
+			inset: calc( var(--catalog-item-offset) * (-1) )
+			isolation: isolate
+			z-index: -2
+			transition: background-color .3s ease
+		&:hover, &:active, &:focus
+			&::after
+				background-color: var(--catalog-item-offset-color-active)
+				z-index: -1
+			.section-catalog-item-title
+				color: var(--catalog-item-title-color-active)
+			.section-catalog-item-image
+				opacity: 1
+				&::before
+					opacity: 0
+
+
+/* (End) Catalog Section */
+
 /* (Start) Footer */
 .footer
 	&-top
