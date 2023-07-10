@@ -458,21 +458,21 @@ h1, h2, h3, h4, h5
 	background-color: rgb(var(--blue-light-75))
 .main-slide
 	&-content
-		padding: 0 var(--swiper-padding-x) var(--swiper-padding-y)
+		width: 100%
+		padding: var(--swiper-padding-y) calc( var(--swiper-padding-x) / 3 ) var(--swiper-padding-y) var(--swiper-padding-x)
 		h2
 			margin-bottom: 2rem
 			span
 				display: block
 				font-size: var(--fz-2)
 				font-weight: normal
-				line-height: var(--lh-1)
 				margin-top: .4rem
 	&-image
+		height: 100%
 		position: relative
 		img
 			width: 100%
 			height: auto
-			object-fit: cover
 
 /* (Start) Main Pagination */
 .swiper-main

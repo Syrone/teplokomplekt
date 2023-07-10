@@ -77,7 +77,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* (Start) Swiper Main */
   const swiperMain = new Swiper(".swiper-main", {
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
     loop: true,
+    grabCursor: true,
 
     pagination: {
       el: ".swiper-main-pagination",

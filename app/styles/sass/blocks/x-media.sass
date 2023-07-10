@@ -40,6 +40,9 @@
 	/* (End) Block Nav Menu */
 
 @include media-breakpoint-down(lg)
+	:root
+		--swiper-pagination-bottom: .25rem
+	
 	/* (Start) Header Menu*/
 	.header
 		&-top
@@ -60,6 +63,17 @@
 				grid-template-columns: repeat(2, 1fr)
 	/* (End) Catalog Menu*/
 
+	/* (Start) Main Section */
+	.swiper-main
+		--swiper-padding-x: 1.5rem
+		--swiper-padding-y: 1rem
+	.main-slide-content
+		padding: var(--swiper-padding-y) calc( var(--swiper-padding-x) / 3 ) calc( var(--swiper-padding-y) * 2 ) var(--swiper-padding-x)
+		h2
+			margin-bottom: 1rem
+			span
+				margin-top: .2rem
+	/* (End) Main Section */
 
 
 
@@ -93,6 +107,13 @@
 		--fz-2: .875rem
 		--fz-3: .75rem
 		--fz-4: .675rem
+
+	/* (Start) Custom button*/
+	.btn-gradient
+		--bs-btn-height: 2rem
+		--bs-btn-padding-x: .75rem
+		max-width: 120px
+	/* (End) Custom button*/
 
 	/* (Start) Header Menu*/
 	.header
@@ -130,6 +151,16 @@
 				.list-group
 					--bs-list-group-item-padding-y: 0.5rem
 	/* (End) Catalog Menu*/
+
+	/* (Start) Main Section */
+	.swiper-main
+		--swiper-padding-x: 1rem
+		--swiper-padding-y: .75rem
+	.main-slide-content
+		padding: var(--swiper-padding-y) calc( var(--swiper-padding-x) / 3 ) calc( var(--swiper-padding-y) * 1.5 ) var(--swiper-padding-x)
+		h2
+			margin-bottom: .5rem
+	/* (End) Main Section */
 
 @include media-breakpoint-down(sm)
 	/* (Start) Header Menu*/
@@ -203,6 +234,28 @@
 				right: 0
 				transform: rotate(-45deg) translateY(-50%)
 	/* (End) Catalog Menu*/
+
+	/* (Start) Main Section */
+	.swiper-main
+		--swiper-padding-x: 1.5rem
+		--swiper-padding-y: 1rem
+		&-slide
+			flex-direction: column-reverse
+			align-items: center
+	.main-slide-content
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: var(--swiper-padding-y) var(--swiper-padding-x) calc( var(--swiper-padding-y) * 1.5 ) var(--swiper-padding-x)
+		.btn
+			justify-content: center
+	/* (Start) Main Pagination */
+	.swiper-main
+		& > .swiper-main-pagination
+			width: 100%
+			left: auto
+	/* (End) Main Pagination */
+	/* (End) Main Section */
 
 
 
