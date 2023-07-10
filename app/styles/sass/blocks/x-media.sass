@@ -117,6 +117,7 @@
 
 	/* (Start) Header Menu*/
 	.header
+		--menu-bot-padding-y: .35rem
 		&-top
 			padding: .25rem 0
 			.navbar-collapse
@@ -134,7 +135,7 @@
 
 		&-bottom
 			--menu-bot-height: 40px
-			padding: .35rem 0
+			padding: var(--menu-bot-padding-y) 0
 			&-form
 				--form-width-btn: 30px
 				.btn-icon img
@@ -142,8 +143,6 @@
 	/* (End) Header Menu*/
 
 	/* (Start) Catalog Menu*/
-	.catalog-collapse
-		margin-top: -.375rem
 	.catalog-menu
 		max-width: 610px
 		.list-group

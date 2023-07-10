@@ -7,7 +7,6 @@ main
 	flex: 1 1 auto
 /* (End) Обертка всей страницы*/
 
-
 /* (Start) Titles */
 h1, h2, h3, h4, h5
 	font-weight: bold
@@ -25,6 +24,9 @@ h1, h2, h3, h4, h5
 /* (End) Titles */
 
 /* (Start) Header Menu*/
+.header
+	--menu-bot-padding-y: .875rem
+	position: relative
 .header-top
 	padding: 1rem 0
 	.navbar-brand
@@ -44,7 +46,7 @@ h1, h2, h3, h4, h5
 			flex-grow: 1
 .header-bottom
 	--menu-bot-height: 50px
-	padding: .875rem 0
+	padding: var(--menu-bot-padding-y) 0
 	.btn-primary
 		width: 100%
 		max-width: 140px
@@ -75,7 +77,10 @@ h1, h2, h3, h4, h5
 
 /* (Start) Catalog Menu*/
 .catalog-collapse
-	margin-top: -.875rem
+	width: 100%
+	top: calc( 100% + (var(--menu-bot-padding-y) * (-1)) )
+	position: absolute
+	z-index: 100
 .catalog-menu
 	width: 100%
 	max-width: 1250px
@@ -439,7 +444,8 @@ h1, h2, h3, h4, h5
 
 /* (Start) Section */
 .section
-	padding: 1.875rem 0
+	--section-padding-y: 1.875rem
+	padding: var(--section-padding-y) 0
 /* (End) Section */
 
 /* (Start) Wrapper SwiperJS */
@@ -447,8 +453,35 @@ h1, h2, h3, h4, h5
 	position: relative
 /* (End) Wrapper SwiperJS */
 
+/* (Start) Background Decor */
+.backdrops
+	position: relative
+	&::after
+		content: ''
+		width: 300px
+		height: 100%
+		background-color: rgb(var(--blue-light-25))
+		position: absolute
+		top: 0
+		bottom: 0
+		right: -60px
+/* (End) Background Decor */
+
 /* (Start) Main Section */
-// .section-main
+.section-main
+	position: relative
+	&::after, &::before
+		content: ''
+		width: 50%
+		position: absolute
+		top: var(--section-padding-y)
+		bottom: var(--section-padding-y)
+	&::after
+		background-color: rgb(var(--blue-light-25))
+		left: 0
+	&::before
+		background-color: rgb(var(--blue-light-75))
+		right: 0
 
 .swiper-main
 	--swiper-padding-y: 2.5rem
