@@ -114,6 +114,11 @@
 		width: 80%
 	/* (End) Certificate Section */
 
+	/* (Start) Partners Section */
+	.section-partners
+		&-wrapper
+			grid-template-columns: repeat(7, 1fr)
+	/* (End) Partners Section */
 
 
 
@@ -230,6 +235,13 @@
 			background-color: rgb(var(--blue-light-25))
 			padding: 0 1.875rem 1rem
 	/* (End) Certificate Section */
+
+	/* (Start) Partners Section */
+	.section-partners
+		&-wrapper
+			grid-template-columns: repeat(6, 1fr)
+			gap: 40px 30px
+	/* (End) Partners Section */
 
 @include media-breakpoint-down(sm)
 	/* (Start) Header Menu*/
@@ -350,9 +362,15 @@
 	/* (Start) Certificate Section */
 	.section-certificate
 		&-wrapper
-			padding: 0 1.5rem
+			padding: 0 1.5rem 1rem
 	/* (End) Certificate Section */
 
+	/* (Start) Partners Section */
+	.section-partners
+		&-wrapper
+			grid-template-columns: repeat(4, 1fr)
+			gap: 30px
+	/* (End) Partners Section */
 
 
 	/* (Start) Footer */
