@@ -59,6 +59,12 @@
 			column-gap: 1.5rem
 	/* (End) Advantages Section */
 
+	/* (Start) Goal Section */
+	.section-goal
+		&-right
+			--goal-filter-width: 80%
+	/* (End) Goal Section */
+
 @include media-breakpoint-down(lg)
 	:root
 		--swiper-pagination-bottom: .25rem
@@ -89,6 +95,11 @@
 		--callback-fields-offset: 1rem
 		padding: var(--callback-padding-y) var(--callback-padding-x) calc( var(--callback-padding-y) * 1.5 )
 	/* (End) Callback Form */
+
+	/* (Start) Section */
+	.section
+		--section-inner-margin-x: 3rem
+	/* (End) Section */
 
 	/* (Start) Main Section */
 	.swiper-main
@@ -136,11 +147,18 @@
 	/* (Start) Showing Section */
 	.section-showing
 		&-text
-			margin-left: 3rem
+			margin-left: var(--section-inner-margin-x)
 		&-content
 			gap: 30px
-			padding: 0 20px
+			padding: 40px 20px
 	/* (End) Showing Section */
+
+	/* (Start) Goal Section */
+	.section-goal
+		&-content
+			justify-content: space-evenly
+			padding-right: 2rem
+	/* (End) Goal Section */
 
 	/* (Start) Footer */
 	.footer
@@ -176,6 +194,8 @@
 	/* (Start) Section */
 	.section
 		--section-padding-y: 1.25rem
+		--section-inner-margin-x: unset
+		--section-inner-padding-x: 1.875rem
 	/* (End) Section */
 
 	/* (Start) Custom button*/
@@ -276,19 +296,24 @@
 	/* (Start) Showing Section */
 	.section-showing
 		&-wrapper
-			--swowing-padding-x: 1.875rem
 			.container > .row
 				background-color: rgb(var(--blue-light-75))
 		&-title
-			padding: 2rem var(--swowing-padding-x) 0
+			padding: 2rem var(--section-inner-padding-x) 0
 		&-text
 			max-width: unset
-			margin-left: unset
-			padding: 0 var(--swowing-padding-x)
+			margin-left: var(--section-inner-margin-x)
+			padding: 0 var(--section-inner-padding-x)
 		&-content
 			gap: 30px 20px
-			padding: 2rem var(--swowing-padding-x)
+			padding: 2rem var(--section-inner-padding-x)
 	/* (End) Showing Section */
+
+	/* (Start) Goal Section */
+	.section-goal
+		&-right
+			--goal-filter-width: 55%
+	/* (End) Goal Section */
 
 @include media-breakpoint-down(sm)
 	/* (Start) Header Menu*/
@@ -363,8 +388,14 @@
 				transform: rotate(-45deg) translateY(-50%)
 	/* (End) Catalog Menu*/
 
+	/* (Start) Section */
+	.section
+		--section-inner-padding-x: 1.5rem
+	/* (End) Section */
+
 	/* (Start) Callback Form */
 	.form-callback
+		--callback-padding-x: 1.5rem
 		&-fields
 			width: 100%
 			flex-direction: column
@@ -427,6 +458,12 @@
 			grid-template-columns: repeat(4, 1fr)
 			gap: 30px
 	/* (End) Partners Section */
+
+	/* (Start) Goal Section */
+	.section-goal
+		&-right
+			--goal-filter-width: 80%
+	/* (End) Goal Section */
 
 	/* (Start) Footer */
 	.footer

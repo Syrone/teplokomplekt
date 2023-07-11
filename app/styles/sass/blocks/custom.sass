@@ -208,14 +208,16 @@ p
 
 /* (Start) Custom button*/
 .btn-link
+	--bs-btn-padding-x: .5rem
+	--bs-btn-padding-y: .5rem
+	--bs-btn-font-size: var(--fz-3)
 	--btn-link-color: var(--gray-dark)
 	--btn-link-color--hover: var(--gray)
 	--btn-link-color--active: var(--primary-color-light)
 	display: flex
 	align-items: center
 	gap: .5rem
-	padding: .5rem
-	font-size: var(--fz-3)
+	padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x)
 	color: var(--gray-dark)
 	white-space: nowrap
 	text-decoration: underline
@@ -530,6 +532,8 @@ p
 /* (Start) Section */
 .section
 	--section-padding-y: 1.875rem
+	--section-inner-margin-x: 5rem
+	--section-inner-padding-x: 1rem
 	padding: var(--section-padding-y) 0
 /* (End) Section */
 
@@ -751,7 +755,6 @@ p
 /* (Start) Showing Section */
 .section-showing
 	&-wrapper
-		--swowing-padding-x: 1rem
 		&.backdrops
 			&-left::after, &-right::before
 				top: 0
@@ -759,11 +762,11 @@ p
 			&-right::before
 				background-color: rgb(var(--blue-light-25))
 	&-title
-		padding-right: var(--swowing-padding-x)
+		padding-right: var(--section-inner-padding-x)
 	&-text
-		max-width: calc( 400px + var(--swowing-padding-x) )
-		margin-left: 5rem
-		padding: 1rem var(--swowing-padding-x) 0 0
+		max-width: calc( 400px + var(--section-inner-padding-x) )
+		margin-left: var(--section-inner-margin-x)
+		padding: 1rem var(--section-inner-padding-x) 1rem 0
 	&-content
 		height: 100%
 		display: grid
@@ -771,7 +774,7 @@ p
 		grid-template-rows: max-content
 		align-content: center
 		gap: 40px
-		padding: 0 40px
+		padding: 40px
 		background-color: rgb(var(--blue-light-75))
 	&-item
 		h3, &>div
@@ -786,6 +789,100 @@ p
 	.form-callback
 		border-radius: var(--bs-border-radius) 0 var(--bs-border-radius) var(--bs-border-radius)
 /* (End) Showing Section */
+
+/* (Start) Goal Section */
+.section-goal
+	&-text
+		max-width: calc(480px + var(--section-inner-padding-x))
+		margin-left: var(--section-inner-margin-x)
+		padding: 1rem var(--section-inner-padding-x) 1rem 0
+
+	&-right
+		--goal-filter-width: 68%
+		width: 100%
+		height: 100%
+		position: relative
+		z-index: 1
+	&-image
+		width: 100%
+		height: 100%
+		background-position: center center
+		background-repeat: no-repeat
+		background-size: cover
+		filter: contrast(140%)
+		position: absolute
+		top: 0
+		left: 0
+		z-index: -1
+		&:after
+			content: ''
+			width: 100%
+			height: 100%
+			position: absolute
+			top: 0
+			left: 0
+			background: linear-gradient(0deg,transparent 60%,#fff 100%)
+			z-index: -1
+	&-filter
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		left: 0
+		// z-index: -1
+		&:after, &:before
+			content: ''
+			height: 100%
+			position: absolute
+			top: 0
+			opacity: .8
+		&:after
+			width: var(--goal-filter-width)
+			background: var(--primary-color)
+			left: 0
+		&:before
+			width: calc( 100% - var(--goal-filter-width))
+			background: var(--secondary-color)
+			right: 0
+	&-content
+		display: flex
+		flex-direction: column
+		gap: 10px
+		width: var(--goal-filter-width)
+		height: 100%
+		padding: 1.25rem 2.5rem 1.25rem 1.25rem
+	&-item
+		--bs-btn-padding-x: 1.125rem
+		--bs-btn-padding-y: 1.125rem
+		--btn-link-color: var(--title-color-2)
+		--btn-link-color--hover: var(--title-color-2)
+		--btn-link-color--active: var(--title-color-2)
+		--bs-btn-bg: var(--gradient-blue-light)
+		--bs-btn-hover-bg: var(--gradient-blue-light-hover)
+		--bs-btn-active-bg: var(--gradient-blue-light)
+		--bs-btn-border-width: 0
+		min-height: 80px
+		align-items: flex-start
+		justify-content: space-between
+		gap: 0
+		line-height: normal
+		background: var(--bs-btn-bg)
+		padding: var(--bs-btn-padding-y) calc( var(--bs-btn-padding-x) / 2 ) calc( var(--bs-btn-padding-y) / 2 ) var(--bs-btn-padding-x)
+		text-align: left
+		text-decoration: none
+		white-space: normal
+		img
+			align-self: flex-end
+		&:hover
+			background: var(--bs-btn-hover-bg)
+		&:active
+			background: var(--bs-btn-active-bg)
+
+/* (End) Goal Section */
+
+
+
+
 
 /* (Start) Footer */
 .footer
