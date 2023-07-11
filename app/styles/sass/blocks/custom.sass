@@ -26,6 +26,12 @@ p
 	line-height: normal
 /* (End) Titles and Text */
 
+/* (Start) Highlighted spans in the title */
+.primary-title
+	& > span
+		color: var(--primary-color)
+/* (End) Highlighted spans in the title */
+
 /* (Start) Header Menu*/
 .header
 	--menu-bot-padding-y: .875rem
@@ -470,6 +476,10 @@ p
 		&::after
 			background-color: rgb(var(--blue-light-25))
 			left: 0
+	&-right
+		&::before
+			background-color: rgb(var(--blue-light-75))
+			right: 0
 		&-mini::after
 			content: ''
 			width: 300px
@@ -479,10 +489,6 @@ p
 			top: 0
 			bottom: 0
 			right: -60px
-			z-index: -1
-	&-right::before
-		background-color: rgb(var(--blue-light-75))
-		right: 0
 /* (End) Background Decor */
 
 /* (Start) Main Section */
@@ -629,6 +635,27 @@ p
 		line-height: normal
 		color: var(--title-color-2)
 /* (End) Advantages Section */
+
+/* (Start) Certificate Section */
+.section-certificate
+	&-wrapper
+		background-color: white
+	&-title
+		height: 100%
+		display: flex
+		align-items: center
+		padding: 1rem 0
+		h2
+			max-width: 650px
+
+.swiper-certificate
+	width: 75%
+	&-slide
+		img
+			width: 100%
+			height: auto
+			object-fit: contain
+/* (End) Certificate Section */
 
 /* (Start) Footer */
 .footer

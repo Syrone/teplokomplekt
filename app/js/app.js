@@ -95,4 +95,20 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
   /* (End) Swiper Main */
+
+  /* (Start) Swiper Certificate */
+  const swiperCertificate = new Swiper(".swiper-certificate", {
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+    loop: true,
+    grabCursor: true,
+
+    navigation: {
+      nextEl: ".swiper-certificate-next",
+      prevEl: ".swiper-certificate-prev",
+    },
+  });
+  /* (End) Swiper Certificate */
 });
