@@ -39,6 +39,12 @@
 			padding: 0 .5rem
 	/* (End) Block Nav Menu */
 
+	/* (Start) Callback Form */
+	.form-callback
+		--callback-fields-offset: 1rem
+		padding: var(--callback-padding-y) 6rem calc( var(--callback-padding-y) * 1.5 ) var(--callback-padding-x)
+	/* (End) Callback Form */
+
 	/* (Start) Catalog Section */
 	.section-catalog
 		&-wrapper
@@ -56,7 +62,7 @@
 @include media-breakpoint-down(lg)
 	:root
 		--swiper-pagination-bottom: .25rem
-	
+
 	/* (Start) Header Menu*/
 	.header
 		&-top
@@ -76,6 +82,13 @@
 			&-inner
 				grid-template-columns: repeat(2, 1fr)
 	/* (End) Catalog Menu*/
+
+	/* (Start) Callback Form */
+	.form-callback
+		--callback-padding-y: 1.5rem
+		--callback-fields-offset: 1rem
+		padding: var(--callback-padding-y) var(--callback-padding-x) calc( var(--callback-padding-y) * 1.5 )
+	/* (End) Callback Form */
 
 	/* (Start) Main Section */
 	.swiper-main
@@ -120,7 +133,14 @@
 			grid-template-columns: repeat(7, 1fr)
 	/* (End) Partners Section */
 
-
+	/* (Start) Showing Section */
+	.section-showing
+		&-text
+			margin-left: 3rem
+		&-content
+			gap: 30px
+			padding: 0 20px
+	/* (End) Showing Section */
 
 	/* (Start) Footer */
 	.footer
@@ -201,6 +221,12 @@
 					--bs-list-group-item-padding-y: 0.5rem
 	/* (End) Catalog Menu*/
 
+	/* (Start) Callback Form */
+	.form-callback
+		&-wrapper
+			flex-direction: column
+	/* (End) Callback Form */
+
 	/* (Start) Main Section */
 	.swiper-main
 		--swiper-padding-x: 1rem
@@ -221,6 +247,8 @@
 	.section-advantages
 		&-title
 			padding: 2rem 1.875rem 0
+		&-content
+			padding: 1rem 1.875rem 2rem
 		&-image
 			img
 				height: 2.5rem
@@ -233,7 +261,9 @@
 				display: none
 		&-wrapper
 			background-color: rgb(var(--blue-light-25))
-			padding: 0 1.875rem 1rem
+			padding: 0 1.875rem 2rem
+		&-title
+			padding: 2rem 0
 	/* (End) Certificate Section */
 
 	/* (Start) Partners Section */
@@ -242,6 +272,23 @@
 			grid-template-columns: repeat(6, 1fr)
 			gap: 40px 30px
 	/* (End) Partners Section */
+
+	/* (Start) Showing Section */
+	.section-showing
+		&-wrapper
+			--swowing-padding-x: 1.875rem
+			.container > .row
+				background-color: rgb(var(--blue-light-75))
+		&-title
+			padding: 2rem var(--swowing-padding-x) 0
+		&-text
+			max-width: unset
+			margin-left: unset
+			padding: 0 var(--swowing-padding-x)
+		&-content
+			gap: 30px 20px
+			padding: 2rem var(--swowing-padding-x)
+	/* (End) Showing Section */
 
 @include media-breakpoint-down(sm)
 	/* (Start) Header Menu*/
@@ -316,6 +363,15 @@
 				transform: rotate(-45deg) translateY(-50%)
 	/* (End) Catalog Menu*/
 
+	/* (Start) Callback Form */
+	.form-callback
+		&-fields
+			width: 100%
+			flex-direction: column
+		.btn
+			max-width: unset
+	/* (End) Callback Form */
+
 	/* (Start) Main Section */
 	.swiper-main
 		--swiper-padding-x: 1.5rem
@@ -350,7 +406,7 @@
 			padding: 2rem 1.5rem 0
 		&-content
 			grid-template-columns: repeat(2, 1fr)
-			padding: 1rem 1.5rem
+			padding: 1rem 1.5rem 2rem
 			gap: 2rem 1rem
 		&-image
 			img
@@ -362,7 +418,7 @@
 	/* (Start) Certificate Section */
 	.section-certificate
 		&-wrapper
-			padding: 0 1.5rem 1rem
+			padding: 0 1.5rem 2rem
 	/* (End) Certificate Section */
 
 	/* (Start) Partners Section */
@@ -371,7 +427,6 @@
 			grid-template-columns: repeat(4, 1fr)
 			gap: 30px
 	/* (End) Partners Section */
-
 
 	/* (Start) Footer */
 	.footer

@@ -70,6 +70,7 @@ p
 	.btn-location, .block-phone, .cart
 		height: var(--menu-bot-height)
 	.form-control-lg
+		font-size: var(--fz-3)
 		min-height: var(--menu-bot-height)
 	&-form
 		--form-width-btn: 50px
@@ -324,9 +325,31 @@ p
 		background: var(--bs-btn-hover-bg)
 	&:active
 		background: var(--bs-btn-active-bg)
+	&-orange
+		--bs-btn-height: 3.125rem
+		--bs-btn-padding-x: 1.25rem
+		--bs-btn-padding-y: 0
+		--bs-btn-font-size: var(--fz-2)
+		--bs-btn-color: white
+		--bs-btn-hover-color: white
+		--bs-btn-active-color: white
+		--bs-btn-bg: var(--gradient-orange)
+		--bs-btn-hover-bg: var(--gradient-orange-hover)
+		--bs-btn-active-bg: var(--gradient-orange)
+		--bs-btn-border-width: 0
+		--bs-btn-border-color: transparent
+		width: 100%
+		max-width: 240px
+		height: var(--bs-btn-height)
+		display: flex
+		align-items: center
+		justify-content: center
+		background: var(--bs-btn-bg)
+		&:hover
+			background: var(--bs-btn-hover-bg)
+		&:active
+			background: var(--bs-btn-active-bg)
 
-	
-	
 /* (End) Custom button*/
 
 /* (Start) Reused button*/
@@ -358,7 +381,8 @@ p
 
 .form-control-lg
 	min-height: 50px
-	font-size: var(--fz-3)
+	font-size: var(--fz-2)
+
 /* (End) Reused input*/
 
 /* (Start) Block phone*/
@@ -427,6 +451,58 @@ p
 	&:hover
 		opacity: .75
 /* (End) Block Cart*/
+
+/* (Start) Callback Form */
+.form-callback
+	--callback-padding-x: 1.875rem
+	--callback-padding-y: 1.875rem
+	--callback-fields-offset: 1.25rem
+	background: var(--gradient-blue-light)
+	border-radius: var(--bs-border-radius)
+	padding: var(--callback-padding-y) 8.75rem calc( var(--callback-padding-y) * 1.5 ) var(--callback-padding-x)
+	position: relative
+	z-index: 1
+	&-decor
+		width: 140px
+		height: 165px
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: contain
+		position: absolute
+		bottom: var(--callback-padding-y)
+		right: var(--callback-padding-x)
+		z-index: -1
+	h3, p
+			color: var(--title-color-1)
+	p
+		margin-bottom: 0
+	&-wrapper
+		display: flex
+		align-items: center
+		gap: var(--callback-fields-offset)
+		padding: 1.25rem 0
+	&-fields
+		display: flex
+		align-items: center
+		gap: var(--callback-fields-offset)
+	&-rules
+		max-width: 520px
+		line-height: normal
+		text-align: justify
+		color: var(--text-color-light)
+		a
+			--bs-link-color-rgb: var(--gray-dark)
+			&:hover
+				--bs-link-color-rgb: var(--gray)
+			&:active
+				--bs-link-color-rgb: var(--primary-color)
+				text-decoration-color: var(--bs-link-color-rgb)
+				transition: none
+
+	.form-control
+		--bs-border-color: #b8d6f2
+
+/* (End) Callback Form */
 
 /* (Start) Customize Tooltip*/
 .tooltip-location
@@ -671,6 +747,45 @@ p
 			max-height: 80px
 			object-fit: contain
 /* (End) Partners Section */
+
+/* (Start) Showing Section */
+.section-showing
+	&-wrapper
+		--swowing-padding-x: 1rem
+		&.backdrops
+			&-left::after, &-right::before
+				top: 0
+				bottom: 0
+			&-right::before
+				background-color: rgb(var(--blue-light-25))
+	&-title
+		padding-right: var(--swowing-padding-x)
+	&-text
+		max-width: calc( 400px + var(--swowing-padding-x) )
+		margin-left: 5rem
+		padding: 1rem var(--swowing-padding-x) 0 0
+	&-content
+		height: 100%
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+		grid-template-rows: max-content
+		align-content: center
+		gap: 40px
+		padding: 0 40px
+		background-color: rgb(var(--blue-light-75))
+	&-item
+		h3, &>div
+			line-height: normal
+		h3
+			color: var(--primary-color)
+			margin-bottom: 0
+		&>div
+			max-width: 200px
+			color: var(--title-color-2)
+
+	.form-callback
+		border-radius: var(--bs-border-radius) 0 var(--bs-border-radius) var(--bs-border-radius)
+/* (End) Showing Section */
 
 /* (Start) Footer */
 .footer
