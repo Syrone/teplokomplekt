@@ -7,6 +7,41 @@ main
 	flex: 1 1 auto
 /* (End) Обертка всей страницы*/
 
+/* (Start) Yandex map */
+.map
+	width: 100%
+	height: 500px
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 0
+
+.ymaps-2-1-79-controls__control
+	inset: 150px 10px auto auto !important
+.ymaps-2-1-79-controls__control_toolbar
+	inset: 210px 9px auto auto !important
+	position: absolute !important
+.ymaps-2-1-79-zoom
+	width: 30px !important
+	height: 0 !important
+	padding: 30px 0 !important
+.ymaps-2-1-79-float-button
+	padding-left: 30px !important
+	height: 30px !important
+.ymaps-2-1-79-float-button-icon
+	width: 24px !important
+	height: 20px !important
+.ymaps-2-1-79-float-button
+	border-radius: var(--bs-border-radius-lg) !important
+[class*="zoom__plus"]
+	border-radius: var(--bs-border-radius-lg) var(--bs-border-radius-lg) 0 0 !important
+[class*="zoom__minus"]
+	border-radius: 0 0 var(--bs-border-radius-lg) var(--bs-border-radius-lg) !important
+[class*="zoom__scale"]
+	display: none !important
+
+/* (End) Yandex map */
+
 /* (Start) Titles and Text */
 h1, h2, h3, h4, h5
 	font-weight: bold
@@ -454,6 +489,110 @@ p
 		opacity: .75
 /* (End) Block Cart*/
 
+/* (Start) Articles Block */
+.block-articles
+	width: 100%
+	height: 100%
+	background: rgb(var(--blue-light-75))
+	padding: 3.125rem 0
+	&-content
+		display: flex
+		justify-content: space-between
+		gap: 2.5rem
+		padding-top: 1.5rem
+		padding-left: 1.25rem
+	&-item
+		width: 240px
+		flex-shrink: 0
+		font-size: var(--fz-2)
+		&:hover
+			text-decoration: none
+			.block-articles-name
+				color: var(--title-color-2)
+	&-image
+		width: 100%
+		display: flex
+		justify-content: center
+		background-color: white
+		border: 1px solid #d4d4d4
+		margin-bottom: 1rem
+		overflow: hidden
+		img
+			width: auto
+			height: 100%
+			max-height: 180px
+			object-fit: cover
+			object-position: center
+	&-name
+		line-height: normal
+		color: var(--secondary-color)
+/* (End) Articles Block */
+
+/* (Start) Sidebar News Block */
+.block-sidebar
+	width: 100%
+	height: 100%
+	background: rgb(var(--blue-light-25))
+	padding: 3.125rem 0 0 1.5rem
+	&-title h2
+		color: #142856
+		opacity: .7
+	&-content
+		display: flex
+		flex-direction: column
+		gap: 1.25rem
+		padding: 1.5rem 0
+	&-item
+		--bs-link-color-rgb: var(--secondary-color)
+		font-size: var(--fz-2)
+		line-height: normal
+		text-decoration-color: var(--bs-link-color-rgb)
+		&:hover
+			--bs-link-color-rgb: var(--title-color-2)
+			text-decoration: none
+		&:active
+			--bs-link-color-rgb: var(--primary-color)
+			text-decoration: none
+			transition: none
+/* (End) Sidebar News Block */	
+
+/* (Start) Block CTA */
+.block-cta
+	position: relative
+	z-index: 1
+	&-item
+		--cta-item-padding-y: 1.5rem
+		--cta-item-padding-x: 1.5rem
+		height: 100%
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		gap: 1rem
+		background: var(--gradient-blue-light)
+		padding: var(--cta-item-padding-y) var(--cta-item-padding-x)
+		position: relative
+		img
+			width: auto
+			height: 40px
+			position: absolute
+			top: calc( var(--cta-item-padding-y) - (var(--cta-item-padding-y) / 3) )
+			right: calc( var(--cta-item-padding-x) - (var(--cta-item-padding-y) / 3) )
+		& > div
+			flex-grow: 1
+.cta-item
+	&-title
+		max-width: 120px
+		font-size: var(--fz-2)
+		font-weight: bold
+		line-height: normal
+		color: var(--title-color-2)
+	&-text
+		max-width: 210px
+		line-height: normal
+		margin-bottom: .5rem
+
+/* (End) Block CTA */
+
 /* (Start) Callback Form */
 .form-callback
 	--callback-padding-x: 1.875rem
@@ -475,7 +614,7 @@ p
 		right: var(--callback-padding-x)
 		z-index: -1
 	h3, p
-			color: var(--title-color-1)
+		color: var(--title-color-1)
 	p
 		margin-bottom: 0
 	&-wrapper
@@ -877,15 +1016,70 @@ p
 			background: var(--bs-btn-hover-bg)
 		&:active
 			background: var(--bs-btn-active-bg)
-
 /* (End) Goal Section */
 
+/* (Start) News Section */
+.section-news
+	padding-bottom: 0
+	.block-articles
+		padding-right: 3.75rem
+	&.backdrops
+		&-right::before, &-right-mini::before, &-left::after
+			bottom: 0
+		&-right::before
+			background: rgb(var(--blue-light-25))
+/* (End) News Section */
 
+/* (Start) Articles Section */
+.section-articles
+	&.backdrops
+		&-left::after
+			background: rgb(var(--blue-light-75))
+/* (End) Articles Section */
+
+/* (Start) Map Section */
+.section-map
+	padding-top: 0
+	position: relative
+	&-inner
+		width: 100%
+		height: 100%
+		display: flex
+		flex-direction: column
+		gap: 1rem
+		padding: 1.5rem 0 1.5rem 1.5rem
+		position: relative
+		z-index: 1
+		&::before
+			content: ''
+			background-color: #fff
+			position: absolute
+			inset: 0
+			opacity: .9
+			z-index: -1
+	&-place, &-time, &-mail, &-tel
+		font-size: var(--fz-3)
+		color: #142856
+		span
+			display: block
+			font-weight: normal
+			color: var(--text-color)
+	&-mail
+	&-tel
+		a
+			display: block
+			font-size: var(--fz-2)
+			font-weight: bold
+			color: var(--title-color-2)
+			text-decoration: none
+/* (End) Map Section */
 
 
 
 /* (Start) Footer */
 .footer
+	--footer-padding-y: 1.875rem
+	padding-top: var(--footer-padding-y)
 	&-top
 		padding: 1.5rem 0 1rem
 	&-bottom

@@ -39,6 +39,12 @@
 			padding: 0 .5rem
 	/* (End) Block Nav Menu */
 
+	/* (Start) Articles Block */
+	.block-articles
+		&-content
+			gap: 1rem
+	/* (End) Articles Block */
+
 	/* (Start) Callback Form */
 	.form-callback
 		--callback-fields-offset: 1rem
@@ -64,6 +70,12 @@
 		&-right
 			--goal-filter-width: 80%
 	/* (End) Goal Section */
+
+	/* (Start) News Section */
+	.section-news
+		.block-articles
+			padding-right: 1.25rem
+	/* (End) News Section */
 
 @include media-breakpoint-down(lg)
 	:root
@@ -160,6 +172,17 @@
 			padding-right: 2rem
 	/* (End) Goal Section */
 
+	/* (Start) News Section */
+	.section-news
+		.block-articles
+			&-item
+				width: 100%
+				flex: 1 1 auto
+			&-image
+				img
+					max-height: 120px
+	/* (End) News Section */
+
 	/* (Start) Footer */
 	.footer
 		&-top
@@ -203,6 +226,9 @@
 		--bs-btn-height: 2rem
 		--bs-btn-padding-x: .75rem
 		max-width: 120px
+		&-orange
+			--bs-btn-height: 2.5rem
+			--bs-btn-padding-x: .75rem
 	/* (End) Custom button*/
 
 	/* (Start) Header Menu*/
@@ -240,6 +266,45 @@
 				.list-group
 					--bs-list-group-item-padding-y: 0.5rem
 	/* (End) Catalog Menu*/
+
+	/* (Start) Yandex map */
+	.map
+		height: 300px
+	.ymaps-2-1-79-controls__control
+		inset: 80px 10px auto auto !important
+	.ymaps-2-1-79-controls__control_toolbar
+		inset: 140px 9px auto auto !important
+	/* (End) Yandex map */
+
+	/* (Start) Sidebar News Block */
+	.block-sidebar
+		padding: 2rem 0
+		background: rgb(var(--blue-light-75))
+		&-content
+			flex-direction: row
+			gap: 1rem
+			padding: 0
+		&-item
+			flex-grow: 1
+			white-space: pre-line
+	/* (End) Sidebar News Block */
+
+	/* (Start) Articles Block */
+	.block-articles
+		&-content
+			padding-left: 0
+	/* (End) Articles Block */
+
+	/* (Start) Block CTA */
+	.block-cta
+		&-item
+			gap: .5rem
+			img
+				height: 30px
+	.cta-item
+		&-title
+			max-width: 90px
+	/* (End) Block CTA */
 
 	/* (Start) Callback Form */
 	.form-callback
@@ -315,6 +380,30 @@
 			--goal-filter-width: 55%
 	/* (End) Goal Section */
 
+	/* (Start) News Section */
+	.section-news
+		&.backdrops-right:before
+			background-color: rgb(var(--blue-light-75))
+		.block-articles
+			padding: 1rem 0 2rem
+			&-item
+				max-width: 160px
+	/* (End) News Section */
+
+	/* (Start) Map Section */
+	.section-map
+		padding-top: 180px
+		&-inner
+			flex-direction: row
+			justify-content: space-between
+			padding: 1.5rem
+	/* (End) Map Section */
+
+	/* (Start) Footer */
+	.footer
+		--footer-padding-y: 1.5rem
+	/* (End) Footer */
+
 @include media-breakpoint-down(sm)
 	/* (Start) Header Menu*/
 	.header
@@ -387,6 +476,22 @@
 				right: 0
 				transform: rotate(-45deg) translateY(-50%)
 	/* (End) Catalog Menu*/
+
+	/* (Start) Yandex map */
+	.map
+		display: block
+		position: static
+	/* (End) Yandex map */
+
+	/* (Start) Sidebar News Block */
+	.block-sidebar
+		&-content
+			flex-wrap: wrap
+	/* (End) Sidebar News Block */
+
+	/* (Start) Block CTA */
+	.block-cta
+	/* (End) Block CTA */
 
 	/* (Start) Section */
 	.section
@@ -464,6 +569,25 @@
 		&-right
 			--goal-filter-width: 80%
 	/* (End) Goal Section */
+
+	/* (Start) News Section */
+	.section-news
+		.block-articles
+			&-content
+				display: grid
+				grid-template-columns: repeat(2, 1fr)
+			&-item
+				max-width: unset
+			
+	/* (End) News Section */
+
+	/* (Start) Map Section */
+	.section-map
+		padding-top: 0
+		&-inner
+			flex-wrap: wrap
+			padding: 1.5rem 0
+	/* (End) Map Section */
 
 	/* (Start) Footer */
 	.footer
