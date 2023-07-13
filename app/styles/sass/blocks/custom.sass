@@ -387,6 +387,14 @@ p
 		&:active
 			background: var(--bs-btn-active-bg)
 
+.btn-sort
+	--bs-btn-padding-x: 0
+	--bs-btn-padding-y: .5rem
+	--bs-btn-font-size: var(--fz-3)
+	--bs-btn-line-height: normal
+	--bs-btn-color: #919ab3
+	--bs-btn-border-width: 0
+	--bs-btn-box-shadow: none
 /* (End) Custom button*/
 
 /* (Start) Reused button*/
@@ -421,6 +429,36 @@ p
 	font-size: var(--fz-2)
 
 /* (End) Reused input*/
+
+/* (Start) Reused input check */
+.form-check-input
+	--bs-form-check-bg-checked: var(--primary-color)
+	--bs-form-check-border-width: 1px
+	--bs-form-check-border-color: #b7b7b7
+	--bs-form-check-border-color-checked: var(--primary-color)
+	--bs-form-check-border-radius: 0
+	border: var(--bs-form-check-border-width) solid var(--bs-form-check-border-color)
+	border-radius: var(--bs-form-check-border-radius) !important
+	&:focus
+		border-color: var(--bs-form-check-border-color-checked)
+		box-shadow: none
+	&:checked
+		background-color: var(--bs-form-check-bg-checked)
+		&[type=radio]
+			--bs-form-check-bg-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3E%3C/svg%3E")
+/* (End) Reused input check */
+
+/* (Start) Reused Breadcrumbs */
+.breadcrumb
+	--bs-breadcrumb-font-size: var(--fz-4)
+	--bs-breadcrumb-divider: '—'
+	--bs-breadcrumb-divider-color: #8d92a1
+	--bs-breadcrumb-item-active-color: #c1cbda
+	--bs-breadcrumb-item-padding-x: .4rem
+	--bs-breadcrumb-margin-bottom: 1.25rem
+	&-item
+		color: var(--bs-breadcrumb-divider-color)
+/* (End) Reused Breadcrumbs */
 
 /* (Start) Block phone*/
 .block-phone
@@ -690,6 +728,81 @@ p
 	height: 100%
 	margin-top: unset
 /* (End) Customize SwiperJS*/
+
+/* (Start) Double Slide Box */
+.wrapper-price
+	--price-inpur-slider-height: .1875rem
+	--price-inpur-slider-border-radius: 1rem
+.price-input
+	display: flex
+	&-field
+		&:first-child
+			width: 40%
+		&:last-child
+			width: 60%
+		& + .price-input-field
+			margin-left: .625rem
+	&-slider
+		width: 100%
+		height: var(--price-inpur-slider-height)
+		background-color: #a9d8f9
+		border-radius: var(--price-inpur-slider-border-radius)
+		margin: .75rem 0 .625rem
+		position: relative
+	&-progress
+		height: var(--price-inpur-slider-height)
+		background-color: var(--primary-color)
+		border-radius: var(--price-inpur-slider-border-radius)
+		position: absolute
+		left: 0
+		right: 0
+	&-range
+		position: relative
+		input
+			appearance: none
+			width: 100%
+			height: var(--price-inpur-slider-height)
+			background: none
+			position: absolute
+			top: -.8125rem
+			pointer-events: none
+.input-max, .input-min
+	appearance: none
+	width: 100%
+	height: 1.875rem
+	font-size: var(--fz-4)
+	color: var(--title-color-1)
+	line-height: normal
+	background-color: #f2f7ff
+	border: 1px solid #cbe9fe
+	padding: .25rem .5rem
+	&[type="number"]::-webkit-outer-spin-button,
+	&[type="number"]::-webkit-inner-spin-button
+		appearance: none
+.input-min
+	text-align: right
+.input-max
+	text-align: center
+.range-min, .range-max
+	&[type="range"]::-webkit-slider-thumb
+		appearance: none
+		width: .5625rem
+		height: .5625rem
+		background-color: var(--primary-color)
+		border: none
+		border-radius: 50%
+		pointer-events: auto
+		cursor: pointer
+	&[type="range"]::-moz-range-thumb
+		appearance: none
+		width: .5625rem
+		height: .5625rem
+		background-color: var(--primary-color)
+		border: none
+		border-radius: 50%
+		pointer-events: auto
+		cursor: pointer
+/* (End) Double Slide Box */
 
 /* (Start) Section */
 .section
@@ -1087,7 +1200,6 @@ p
 			display: block
 			font-weight: normal
 			color: var(--text-color)
-	&-mail
 	&-tel
 		a
 			display: block
@@ -1097,6 +1209,78 @@ p
 			text-decoration: none
 /* (End) Map Section */
 
+/* (Start) Category Section */
+
+
+.sort
+	&-element
+		& + .sort-element
+			margin-top: 2.5rem
+		&-title
+			font-size: var(--fz-3)
+			color: var(--secondary-color)
+			text-transform: uppercase
+
+	&-catalog-item
+		.btn-sort
+			text-align: left
+
+	&-filter
+		&-item
+			& + .sort-filter-item
+				.filter-list-group
+					border-top: none
+		&-title
+			font-size: var(--fz-3)
+			font-weight: normal
+			line-height: normal
+			color: var(--secondary-color)
+		.btn
+			width: 100%
+			max-width: unset
+			justify-content: center
+			padding-left: .25rem
+			padding-right: .25rem
+			&[type="submit"]
+				height: 40px
+				font-size: var(--fz-3)
+				font-weight: normal
+				margin-top: 1.25rem
+.catalog-list-group
+	--bs-list-group-item-padding-x: 1.25rem
+	--bs-list-group-item-padding-y: .1rem
+	--bs-list-group-color: #142856
+	--bs-list-group-bg: transparent
+	--bs-list-group-border-color: transparent
+	--bs-list-group-border-width: 0
+	--bs-list-group-border-radius: 0
+	--bs-list-group-action-hover-color: var(--primary-color)
+	--bs-list-group-action-hover-bg: transparent
+	--bs-list-group-action-active-color: var(--primary-color)
+	--bs-list-group-action-active-bg: transparent
+	--bs-list-group-active-color: var(--primary-color)
+	--bs-list-group-active-bg: transparent
+	&-item
+		padding-right: 0
+		text-decoration: underline
+		&:hover, &:focus, &.active
+			text-decoration: none
+
+.filter-list-group
+	--bs-list-group-item-padding-y: .3rem
+	--bs-list-group-color: var(--title-color-1)
+	--bs-list-group-bg: transparent
+	--bs-list-group-border-color: #a9d8f9
+	--bs-list-group-border-radius: 0
+	padding: var(--bs-list-group-item-padding-x)
+	border: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color)
+	&-item
+		border: none
+		padding: var(--bs-list-group-item-padding-y) 0
+		&:last-child
+			padding-bottom: 0
+
+/* (End) Category Section */
 
 
 /* (Start) Footer */

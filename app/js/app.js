@@ -1,6 +1,63 @@
 import Swiper from "swiper/bundle";
 
 document.addEventListener("DOMContentLoaded", () => {
+  /** (Start) Price Range */
+  const rangeInput = document.querySelectorAll(".price-input-range input"),
+    priceInput = document.querySelectorAll(".price-input input"),
+    progress = document.querySelector(
+      ".price-input-slider .price-input-progress"
+    );
+
+  let priceGap =
+    (document.querySelector(".range-max").getAttribute("max") * 7) / 100;
+
+  rangeInput.forEach((input) => {
+    input.addEventListener("input", (e) => {
+      let minValue = parseInt(rangeInput[0].value),
+        maxValue = parseInt(rangeInput[1].value);
+
+      if (maxValue - minValue < priceGap) {
+        if (e.target.className === "range-min") {
+          rangeInput[0].value = maxValue - priceGap;
+        } else {
+          rangeInput[1].value = minValue + priceGap;
+        }
+      } else {
+        priceInput[0].value = minValue;
+        priceInput[1].value = maxValue;
+        progress.style.left = (minValue / rangeInput[0].max) * 100 + "%";
+        progress.style.right = 100 - (maxValue / rangeInput[1].max) * 100 + "%";
+      }
+
+      document.getElementById("btnFilterReset").addEventListener("click", () => {
+        progress.style.left = 0
+        progress.style.right = 0
+      });
+    });
+  });
+
+  priceInput.forEach((input) => {
+    input.addEventListener("input", (e) => {
+      let minValue = parseInt(priceInput[0].value),
+        maxValue = parseInt(priceInput[1].value);
+
+      if (
+        maxValue - minValue >= priceGap &&
+        maxValue <= document.querySelector(".range-max").getAttribute("max")
+      ) {
+        if (e.target.className === "input-min") {
+          rangeInput[0].value = minValue;
+          progress.style.left = (minValue / rangeInput[0].max) * 100 + "%";
+        } else {
+          rangeInput[1].value = maxValue;
+          progress.style.right =
+            100 - (maxValue / rangeInput[1].max) * 100 + "%";
+        }
+      }
+    });
+  });
+  /** (End) Price Range */
+
   /* (Start) Header Catalog Menu*/
   const menuCatalog = document.getElementById("catalogMenu");
   const menuLists = document.querySelectorAll(".catalog-list");
@@ -113,35 +170,37 @@ document.addEventListener("DOMContentLoaded", () => {
   /* (End) Swiper Certificate */
 
   /* (Start) Yandex Map */
-  ymaps.ready(init);
+  if (document.getElementById("map")) {
+    ymaps.ready(init);
+  }
   function init() {
     const redMarker = "islands#redIcon",
-          blueMarker = "islands#blueIcon",
-          orangeMarker = "islands#orangeIcon"
+      blueMarker = "islands#blueIcon",
+      orangeMarker = "islands#orangeIcon";
 
     let map = new ymaps.Map("map", {
-      center: [54.98875739867892,73.36744817187494],
+      center: [54.98875739867892, 73.36744817187494],
       zoom: 4,
     });
 
     /** (Start) Красные Метки */
     let placemarkMoscow = new ymaps.Placemark(
-      [55.58422718162347,37.38553349999997],
+      [55.58422718162347, 37.38553349999997],
       {},
       {
         preset: redMarker,
       }
     );
     let placemarkSamara = new ymaps.Placemark(
-      [53.32213850559074,50.0613185],
+      [53.32213850559074, 50.0613185],
       {},
       {
         preset: redMarker,
       }
     );
-    // 
+    //
     let placemarkIzhevsk = new ymaps.Placemark(
-      [56.85235931108874,53.19983949999994],
+      [56.85235931108874, 53.19983949999994],
       {},
       {
         preset: redMarker,
@@ -151,91 +210,91 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /** (Start) Синие Метки */
     let placemarkKaluga = new ymaps.Placemark(
-      [54.53649918608257,36.19510799999998],
+      [54.53649918608257, 36.19510799999998],
       {},
       {
         preset: blueMarker,
       }
     );
     let placemarkKazan = new ymaps.Placemark(
-      [55.76730619528606,49.099981999999954],
+      [55.76730619528606, 49.099981999999954],
       {},
       {
         preset: blueMarker,
       }
     );
     let placemarkKirov = new ymaps.Placemark(
-      [58.582681531221176,49.5708654999999],
+      [58.582681531221176, 49.5708654999999],
       {},
       {
         preset: blueMarker,
       }
     );
     let placemarkRostov = new ymaps.Placemark(
-      [47.2543416786812,39.62812799999998],
+      [47.2543416786812, 39.62812799999998],
       {},
       {
         preset: blueMarker,
       }
     );
     let placemarkVolgograd = new ymaps.Placemark(
-      [48.64866389085548,44.39812349999996],
+      [48.64866389085548, 44.39812349999996],
       {},
       {
         preset: blueMarker,
       }
     );
     let placemarkIlek = new ymaps.Placemark(
-      [51.52783593070165,53.37136276523543],
+      [51.52783593070165, 53.37136276523543],
       {},
       {
         preset: blueMarker,
       }
     );
     let placemarkUfa = new ymaps.Placemark(
-      [54.73670764541357,55.96282403406904],
+      [54.73670764541357, 55.96282403406904],
       {},
       {
         preset: blueMarker,
       }
     );
     let placemarkYekaterinburg = new ymaps.Placemark(
-      [56.78875104810377,60.47506549999994],
+      [56.78875104810377, 60.47506549999994],
       {},
       {
         preset: blueMarker,
       }
     );
     let placemarkTyumen = new ymaps.Placemark(
-      [57.137410200999284,65.54591599999998],
+      [57.137410200999284, 65.54591599999998],
       {},
       {
         preset: blueMarker,
       }
     );
     let placemarkOmsk = new ymaps.Placemark(
-      [55.12277356552416,73.37843449999993],
+      [55.12277356552416, 73.37843449999993],
       {},
       {
         preset: blueMarker,
       }
     );
     let placemarkNovosibirsk = new ymaps.Placemark(
-      [55.00202076433394,82.95604349999992],
+      [55.00202076433394, 82.95604349999992],
       {},
       {
         preset: blueMarker,
       }
     );
     let placemarkZhezkazgan = new ymaps.Placemark(
-      [47.799174970086895,67.71105540717373],
+      [47.799174970086895, 67.71105540717373],
       {},
       {
         preset: blueMarker,
       }
     );
     let placemarkSurgut = new ymaps.Placemark(
-      [61.23740730641438,73.39792181976844],
+      [61.23740730641438, 73.39792181976844],
       {},
       {
         preset: blueMarker,
@@ -244,38 +303,37 @@ document.addEventListener("DOMContentLoaded", () => {
     /** (End) Синие Метки */
 
     let placemarkPerm = new ymaps.Placemark(
-      [58.02283760827209,56.22942499999996],
+      [58.02283760827209, 56.22942499999996],
       {},
       {
         preset: orangeMarker,
       }
     );
 
-    map.geoObjects.add(placemarkMoscow)
-    map.geoObjects.add(placemarkSamara)
-    map.geoObjects.add(placemarkIzhevsk)
-    map.geoObjects.add(placemarkKaluga)
-    map.geoObjects.add(placemarkKazan)
-    map.geoObjects.add(placemarkKirov)
-    map.geoObjects.add(placemarkRostov)
-    map.geoObjects.add(placemarkVolgograd)
-    map.geoObjects.add(placemarkIlek)
-    map.geoObjects.add(placemarkUfa)
-    map.geoObjects.add(placemarkYekaterinburg)
-    map.geoObjects.add(placemarkTyumen)
-    map.geoObjects.add(placemarkOmsk)
-    map.geoObjects.add(placemarkNovosibirsk)
-    map.geoObjects.add(placemarkZhezkazgan)
-    map.geoObjects.add(placemarkSurgut)
-    map.geoObjects.add(placemarkPerm)
+    map.geoObjects.add(placemarkMoscow);
+    map.geoObjects.add(placemarkSamara);
+    map.geoObjects.add(placemarkIzhevsk);
+    map.geoObjects.add(placemarkKaluga);
+    map.geoObjects.add(placemarkKazan);
+    map.geoObjects.add(placemarkKirov);
+    map.geoObjects.add(placemarkRostov);
+    map.geoObjects.add(placemarkVolgograd);
+    map.geoObjects.add(placemarkIlek);
+    map.geoObjects.add(placemarkUfa);
+    map.geoObjects.add(placemarkYekaterinburg);
+    map.geoObjects.add(placemarkTyumen);
+    map.geoObjects.add(placemarkOmsk);
+    map.geoObjects.add(placemarkNovosibirsk);
+    map.geoObjects.add(placemarkZhezkazgan);
+    map.geoObjects.add(placemarkSurgut);
+    map.geoObjects.add(placemarkPerm);
 
     map.controls.remove("searchControl"); // удаляем поиск
     map.controls.remove("trafficControl"); // удаляем контроль трафика
     map.controls.remove("typeSelector"); // удаляем тип
     map.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
     map.controls.remove("rulerControl"); // удаляем контрол правил
-    map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
-
+    map.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
   }
   /* (End) Yandex Map */
 });

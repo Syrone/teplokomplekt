@@ -24,7 +24,7 @@
 <header class="header">
 	<nav class="header-top navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container">
-			<a class="navbar-brand d-flex gap-3 align-items-center" href="#">
+			<a class="navbar-brand d-flex gap-3 align-items-center" href="./index.html">
 				<img src="./images/dist/logo.png" alt="Лого" width="32"
 					class="d-inline-block align-text-top flex-grow-0 flex-shrink-0">
 				<div class="d-flex flex-column fw-bold lh-1 text-uppercase">
@@ -927,12 +927,123 @@
 
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">
-					  <li class="breadcrumb-item"><a href="#">Оборудование для инженерных систем</a></li>
-					  <li class="breadcrumb-item"><a href="#">Каталог</a></li>
-					  <li class="breadcrumb-item"><a href="#">Насосное оборудование</a></li>
-					  <li class="breadcrumb-item active" aria-current="page">Насосы для бытового водоснабжения Wilo</li>
+						<li class="breadcrumb-item"><a href="#">Оборудование для инженерных систем</a></li>
+						<li class="breadcrumb-item"><a href="#">Каталог</a></li>
+						<li class="breadcrumb-item"><a href="#">Насосное оборудование</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Насосы для бытового водоснабжения Wilo</li>
 					</ol>
-				 </nav>
+				</nav>
+			</div>
+
+			<div class="row g-0">
+				<div class="col-lg-2 col-sm-3">
+					<div class="sort">
+						<div class="sort-catalog sort-element">
+							<h2 class="sort-element-title">Категории</h2>
+							<div class="sort-catalog-item">
+								<button class="btn btn-sort" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapseSort-1" aria-expanded="true" aria-controls="collapseSort-1">
+									Насосное оборудование
+								</button>
+								<div class="collapse show" id="collapseSort-1">
+									<div class="catalog-list-group list-group">
+										<button type="button" class="catalog-list-group-item list-group-item list-group-item-action">
+											Циркуляционные насосы
+										</button>
+										<button type="button" class="catalog-list-group-item list-group-item list-group-item-action">
+											Скважинные насосы
+										</button>
+										<button type="button" class="catalog-list-group-item list-group-item list-group-item-action active" aria-current="true">
+											Дренажные насосы
+										</button>
+										<button type="button" class="catalog-list-group-item list-group-item list-group-item-action">
+											Колодезные насосы погружные
+										</button>
+										<button type="button" class="catalog-list-group-item list-group-item list-group-item-action">
+											Канализационные установки
+										</button>
+										<button type="button" class="catalog-list-group-item list-group-item list-group-item-action">
+											Насосные станции
+										</button>
+										<button type="button" class="catalog-list-group-item list-group-item list-group-item-action">
+											Насосные установки
+										</button>
+										<button type="button" class="catalog-list-group-item list-group-item list-group-item-action">
+											Консольные насосы
+										</button>
+										<button type="button" class="catalog-list-group-item list-group-item list-group-item-action">
+											Насосы инлайн
+										</button>
+									 </div>
+								</div>
+							</div>
+						</div>
+
+						<form action="#" class="sort-filter sort-element">
+							<h2 class="sort-element-title">
+								Фильтр
+							</h2>
+							<div class="sort-filter-item">
+								<div class="filter-list-group list-group">
+									<h2 class="sort-filter-title">Тип присоединения</h2>
+
+									<label class="filter-list-group-item list-group-item">
+									  <input class="form-check-input me-2" type="radio" name="flexRadioDefault" value="">
+									  патрубок
+									</label>
+									<label class="filter-list-group-item list-group-item">
+									  <input class="form-check-input me-2" type="radio" name="flexRadioDefault" value="">
+									  резьбовой
+									</label>
+								 </div>
+							</div>
+							<div class="sort-filter-item">
+								<div class="filter-list-group list-group">
+									<h2 class="sort-filter-title">Напряжение, В</h2>
+
+									<label class="filter-list-group-item list-group-item">
+									  <input class="form-check-input me-2" type="checkbox" value="">
+									  220
+									</label>
+									<label class="filter-list-group-item list-group-item">
+									  <input class="form-check-input me-2" type="checkbox" value="">
+									  380
+									</label>
+								 </div>
+							</div>
+							<div class="sort-filter-item">
+								<div class="filter-list-group list-group">
+									<h2 class="sort-filter-title">Цена</h2>
+
+									<div class="wrapper-price">
+										<div class="price-input">
+											<div class="price-input-field">
+												<input type="number" class="input-min" value="0">
+											</div>
+											<div class="price-input-field">
+												<input type="number" class="input-max" value="10000000">
+											</div>
+										</div>
+										<div class="price-input-slider">
+											<div class="price-input-progress"></div>
+										</div>
+										<div class="price-input-range">
+											<input type="range" class="range-min" min="0" max="10000000" value="0" step="10">
+											<input type="range" class="range-max" min="0" max="10000000" value="10000000" step="10">
+										</div>
+									</div>
+								 </div>
+							</div>
+
+							<button type="submit" class="btn btn-primary">Применить</button>
+							<button type="reset" id="btnFilterReset" class="btn btn-link">Сбросить фильтр</button>
+						</form>
+					</div>
+				</div>
+
+				<div class="col-lg-10 col-sm-9">
+
+				</div>
 			</div>
 		</div>
 	</section>
