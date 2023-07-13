@@ -509,6 +509,9 @@ p
 			text-decoration: none
 			.block-articles-name
 				color: var(--title-color-2)
+				text-decoration: none
+				.icon:after
+					display: none
 	&-image
 		width: 100%
 		display: flex
@@ -524,8 +527,28 @@ p
 			object-fit: cover
 			object-position: center
 	&-name
+		display: inline-block
 		line-height: normal
 		color: var(--secondary-color)
+		text-decoration: underline
+		.icon
+			display: inline-block
+			width: 1rem
+			height: auto
+			position: relative
+			svg
+				display: inline-block
+				object-fit: cover
+				fill: currentColor
+			&::after
+				content: ''
+				height: 1px
+				background-color: currentColor
+				position: absolute
+				top: 86%
+				left: 0
+				right: 0
+
 /* (End) Articles Block */
 
 /* (Start) Sidebar News Block */
