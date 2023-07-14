@@ -387,7 +387,7 @@ p
 		&:active
 			background: var(--bs-btn-active-bg)
 
-.btn-sort
+.btn-catalog-sort
 	--bs-btn-padding-x: 0
 	--bs-btn-padding-y: .5rem
 	--bs-btn-font-size: var(--fz-3)
@@ -395,6 +395,32 @@ p
 	--bs-btn-color: #919ab3
 	--bs-btn-border-width: 0
 	--bs-btn-box-shadow: none
+
+.btn-category-sort
+	--bs-btn-padding-x: 0
+	--bs-btn-padding-y: 0
+	--bs-btn-font-size: var(--fz-3)
+	--bs-btn-line-height: normal
+	--bs-btn-color: var(--secondary-color)
+	--bs-btn-hover-color: var(--secondary-color)
+	--bs-btn-active-color: var(--secondary-color)
+	--bs-btn-border-width: 0
+	display: flex
+	align-items: center
+	gap: .25rem
+	text-decoration: underline
+	text-decoration-thickness: .5px
+	text-decoration-color: var(--secondary-color)
+	text-underline-offset: .15rem
+	transition: color .3s ease, text-decoration-color .3s ease
+	img
+		width: var(--fz-1)
+		height: auto
+	&:hover
+		opacity: 0.8
+	&:active
+		opacity: 0.9
+
 /* (End) Custom button*/
 
 /* (Start) Reused button*/
@@ -459,6 +485,77 @@ p
 	&-item
 		color: var(--bs-breadcrumb-divider-color)
 /* (End) Reused Breadcrumbs */
+
+/* (Start) Reused Card */
+.card
+	--bs-card-padding-y: .25rem
+	--bs-card-padding-x:	.5rem
+	--bs-card-color: var(--title-color-1)
+	--bs-card-bg: white
+	--bs-card-border-width:0
+	--bs-card-border-color: transparent
+	--bs-card-border-radius: 0
+	color: var(--bs-card-color)
+	border: none
+	padding: var(--bs-card-padding-y) var(--bs-card-padding-x)
+	&::after
+		content: ''
+		background-color: var(--category-item-offset-color)
+		isolation: isolate
+		position: absolute
+		inset: calc( var(--category-item-offset) * (-1) )
+		z-index: -2
+	&-body
+		display: flex
+		align-items: center
+		justify-content: space-between
+		flex-wrap: wrap
+		gap: 1rem
+		// &-item
+		// 	width: 100%
+	&-title
+		max-width: 290px
+		h3
+			font-size: var(--fz-2)
+			font-weight: 400
+		&-art, &-brend
+			font-size: var(--fz-3)
+			color: #9ea4b6
+			& > span
+				color: var(--text-color)
+	&-info
+		max-width: 190px
+	&-price
+		font-size: var(--h4)
+		color: var(--title-color-2)
+		& > span
+			font-size: var(--fz-1)
+			color: var(--title-color-1)
+	&-stock
+		color: #9ea4b6
+		& > span
+			display: block
+			color: var(--text-color)
+	&-btns
+		max-width: 120px
+		display: flex
+		flex-direction: column
+		gap: .3125rem
+		.btn-gradient-orange
+			--bs-btn-height: 2.125rem
+			--bs-btn-padding-x: .3rem
+			--bs-btn-font-size: var(--fz-3)
+			white-space: nowrap
+		.btn-link
+			--bs-btn-padding-x: .3rem
+			--btn-link-color: var(--primary-color)
+			--btn-link-color--hover: var(--primary-color)
+			--btn-link-color--active: var(--primary-color)
+			width: 100%
+			color: var(--btn-link-color)
+			&:hover
+				opacity: .75
+/* (End) Reused Card */
 
 /* (Start) Block phone*/
 .block-phone
@@ -803,6 +900,39 @@ p
 		pointer-events: auto
 		cursor: pointer
 /* (End) Double Slide Box */
+
+/* (Start) Input Stepper */
+.input
+	&-stepper
+		display: flex
+		align-items: center
+		width: 100%
+		max-width: 7.5rem
+		height: 1.875rem
+		background-color: #f2f7ff
+		border-radius: var(--bs-border-radius)
+	&-display
+		width: 100%
+		height: 100%
+		background-color: #f2f7ff
+		border: 1px solid #cbe9fe
+		text-align: center
+		&[type="number"]::-webkit-outer-spin-button,
+		&[type="number"]::-webkit-inner-spin-button
+			appearance: none
+.increment, .decrement
+	flex-shrink: 0
+	width: 1.875rem
+	height: 100%
+	background-color: #fff
+	border: 1px solid #cbe9fe
+.increment
+	border-left: none
+	border-radius: 0 var(--bs-border-radius) var(--bs-border-radius) 0
+.decrement
+	border-right: none
+	border-radius: var(--bs-border-radius) 0 0 var(--bs-border-radius)
+/* (End) Input Stepper */
 
 /* (Start) Section */
 .section
@@ -1210,8 +1340,44 @@ p
 /* (End) Map Section */
 
 /* (Start) Category Section */
-
-
+.category-header, .category-main, .category-bottom
+	padding-left: 1.75rem
+.category-header
+	display: flex
+	align-items: flex-end
+	justify-content: space-between
+	gap: 1rem
+	&-left
+		display: flex
+		gap: .75rem
+		.btn-icon
+			width: 1.25rem
+			height: 1.25rem
+			border: none
+			opacity: 0.3
+			img
+				width: 100%
+				height: auto
+			&:hover
+				opacity: .5
+			&:active, &.active
+				opacity: 1
+.category-main
+	--category-item-offset: 1.5px
+	--category-item-offset-color: var(--primary-color)
+	padding-top: 1rem
+	padding-bottom: 1rem
+	&-wrapper
+		padding: var(--category-item-offset)
+		&.list, &.grid
+			gap: var(--category-item-offset)
+		&.list
+			display: grid
+			grid-template-columns: repeat(1, 1fr)
+		&.grid
+			display: grid
+			grid-template-columns: repeat(2, 1fr)
+	
 .sort
 	&-element
 		& + .sort-element
@@ -1246,6 +1412,28 @@ p
 				font-size: var(--fz-3)
 				font-weight: normal
 				margin-top: 1.25rem
+
+	&-swiper
+		--swiper-navigation-top-offset: 70%
+		.swiper-certificate
+			width: 100%
+			margin: 1rem 0
+		.swiper-button-next, .swiper-button-prev
+			width: 50%
+			height: calc( 100% - var(--swiper-navigation-top-offset) )
+			&::before
+				content: ''
+				background-color: rgb(var(--blue-light-50))
+				position: absolute
+				inset: 0
+				opacity: 0.9
+				z-index: -1
+		.swiper-button-prev
+			justify-content: flex-end
+			padding-right: 1rem
+		.swiper-button-next
+			justify-content: flex-start
+			padding-left: 1rem
 .catalog-list-group
 	--bs-list-group-item-padding-x: 1.25rem
 	--bs-list-group-item-padding-y: .1rem

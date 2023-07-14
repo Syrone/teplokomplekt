@@ -101,6 +101,17 @@
 				grid-template-columns: repeat(2, 1fr)
 	/* (End) Catalog Menu*/
 
+	/* (Start) Reused Card */
+	.card
+		&-info, &-btns
+			width: 100%
+			max-width: unset
+			display: flex
+			flex-direction: row
+			align-items: center
+			justify-content: space-between
+	/* (End) Reused Card */
+
 	/* (Start) Callback Form */
 	.form-callback
 		--callback-padding-y: 1.5rem
@@ -266,6 +277,17 @@
 				.list-group
 					--bs-list-group-item-padding-y: 0.5rem
 	/* (End) Catalog Menu*/
+
+	/* (Start) Reused Card */
+	.card
+		&-btns
+			.btn-gradient-orange
+				--bs-btn-height: 1.875rem
+				max-width: 120px
+			.btn-link
+				--bs-btn-padding-y: 0.3rem
+				max-width: max-content
+	/* (End) Reused Card */
 
 	/* (Start) Yandex map */
 	.map
@@ -477,6 +499,21 @@
 				transform: rotate(-45deg) translateY(-50%)
 	/* (End) Catalog Menu*/
 
+	/* (Start) Reused Card */
+	.card
+		--bs-card-spacer-y: .3rem
+		--bs-card-spacer-x: .3rem
+		&-body
+			gap: .3rem
+		&-title
+			max-width: unset
+		&-info
+			align-items: flex-start
+		&-btns, &-info
+			width: auto
+			flex-direction: column
+	/* (End) Reused Card */
+
 	/* (Start) Yandex map */
 	.map
 		display: block
@@ -588,6 +625,11 @@
 			flex-wrap: wrap
 			padding: 1.5rem 0
 	/* (End) Map Section */
+
+	/* (Start) Category Section */
+	.category-header, .category-main, .category-bottom
+		padding-left: 0
+	/* (End) Category Section */
 
 	/* (Start) Footer */
 	.footer
