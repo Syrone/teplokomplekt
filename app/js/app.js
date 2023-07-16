@@ -66,12 +66,12 @@ document.addEventListener("DOMContentLoaded", () => {
   /** (Start) Input Stepper */
   const inputSteppers = document.querySelectorAll(".input-stepper");
 
-  if(inputSteppers) {
+  if (inputSteppers) {
     inputSteppers.forEach((inputStepper) => {
       const decrementButton = inputStepper.querySelector(".decrement");
       const incrementButton = inputStepper.querySelector(".increment");
       const inputDisplay = inputStepper.querySelector(".input-display");
-  
+
       decrementButton.addEventListener("click", () => {
         let value = parseInt(inputDisplay.value);
         if (value > parseInt(inputDisplay.min)) {
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
           inputDisplay.value = value;
         }
       });
-  
+
       incrementButton.addEventListener("click", () => {
         let value = parseInt(inputDisplay.value);
         if (value < parseInt(inputDisplay.max)) {
@@ -90,6 +90,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   /** (End) Input Stepper */
+
+  /** (Start) Category List and Grid */
+  const btnList = document.querySelector(".btn-list");
+  const btnGrid = document.querySelector(".btn-grid");
+  const categoryMainWrapper = document.querySelector(".category-main-wrapper");
+
+  if(btnList && btnGrid) {
+    btnGrid.addEventListener("click", () => {
+      btnList.classList.remove("active");
+      btnGrid.classList.add("active");
+      categoryMainWrapper.classList.remove("list");
+      categoryMainWrapper.classList.add("grid");
+    });
+  
+    btnList.addEventListener("click", () => {
+      btnGrid.classList.remove("active");
+      btnList.classList.add("active");
+      categoryMainWrapper.classList.remove("grid");
+      categoryMainWrapper.classList.add("list");
+    });
+  }
+  /** (End) Category List and Grid */
 
   /* (Start) Header Catalog Menu*/
   const menuCatalog = document.getElementById("catalogMenu");
@@ -201,6 +223,50 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
   /* (End) Swiper Certificate */
+
+  /** (Start) Card Page Swiper */
+  const productThumbSwiper = new Swiper(".swiper-product-thumb", {
+    spaceBetween: 10,
+    slidesPerView: 'auto',
+    freeMode: true,
+    watchSlidesProgress: true,
+  });
+  const productMainSwiper = new Swiper(".swiper-product-main", {
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+    spaceBetween: 10,
+    thumbs: {
+      swiper: productThumbSwiper,
+    },
+  });
+  /** (End) Card Page Swiper */
+
+  /** (Start) Also buy Swiper */
+  const alsoBuySwiper = new Swiper(".swiper-also", {
+    spaceBetween: 0,
+    slidesPerView: 4,
+    navigation: {
+      nextEl: ".swiper-also-next",
+      prevEl: ".swiper-also-prev",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      450: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      992: {
+        slidesPerView: 4,
+      }
+    }
+  });
+  /** (End) Also buy Swiper */
 
   /* (Start) Yandex Map */
   if (document.getElementById("map")) {

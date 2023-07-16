@@ -43,6 +43,12 @@
 	.block-articles
 		&-content
 			gap: 1rem
+		&-item
+			width: 100%
+			flex: 1 1 auto
+		&-image
+			img
+				max-height: 150px
 	/* (End) Articles Block */
 
 	/* (Start) Callback Form */
@@ -50,6 +56,15 @@
 		--callback-fields-offset: 1rem
 		padding: var(--callback-padding-y) 6rem calc( var(--callback-padding-y) * 1.5 ) var(--callback-padding-x)
 	/* (End) Callback Form */
+
+	/* (Start) Card Page Swiper */
+	.swiper
+		&-product-main .swiper-product-image img
+			max-height: 300px
+		&-product-thumb .swiper-slide
+			width: 90px !important
+			height: 90px
+	/* (End) Card Page Swiper */
 
 	/* (Start) Catalog Section */
 	.section-catalog
@@ -118,6 +133,22 @@
 		--callback-fields-offset: 1rem
 		padding: var(--callback-padding-y) var(--callback-padding-x) calc( var(--callback-padding-y) * 1.5 )
 	/* (End) Callback Form */
+
+	/* (Start) Articles Block */
+	.block-articles
+		&-image
+			img
+				max-height: 120px
+	/* (End) Articles Block */
+
+	/* (Start) Card Page Swiper */
+	.swiper
+		&-product-main .swiper-product-image img
+			max-height: 280px
+		&-product-thumb .swiper-slide
+			width: 80px !important
+			height: 80px
+	/* (End) Card Page Swiper */
 
 	/* (Start) Section */
 	.section
@@ -193,6 +224,33 @@
 				img
 					max-height: 120px
 	/* (End) News Section */
+
+	/* (Start) Category Section */
+	.category-main
+		&-wrapper
+			&.grid
+				.card
+					--bs-card-spacer-y: .3rem
+					--bs-card-spacer-x: .3rem
+					&-info, &-btns
+						width: 45%
+						align-items: flex-start
+	/* (End) Category Section */
+
+	/* (Start) Desciption Section */
+	.section-decription
+		--section-category-padding-s: 0
+	/* (End) Desciption Section */
+
+	/* (Start) Product Page */
+	.product
+		&-main
+			flex-direction: column
+			.form-calc
+				width: 100%
+		&-advantages
+			flex-direction: column
+	/* (End) Product Page */
 
 	/* (Start) Footer */
 	.footer
@@ -315,6 +373,12 @@
 	.block-articles
 		&-content
 			padding-left: 0
+		&-image
+			img
+				max-height: 90px
+		&-name
+			.icon:after
+				height: 1px
 	/* (End) Articles Block */
 
 	/* (Start) Block CTA */
@@ -323,16 +387,37 @@
 			gap: .5rem
 			img
 				height: 30px
+			.btn-gradient-orange
+				--bs-btn-height: 2.25rem
 	.cta-item
 		&-title
 			max-width: 90px
 	/* (End) Block CTA */
+
+	/* (Start) Reused Accordion */
+	.accordion
+		--bs-accordion-btn-padding-y: .25rem
+		--bs-accordion-body-padding-y: .25rem
+	/* (End) Reused Accordion */
 
 	/* (Start) Callback Form */
 	.form-callback
 		&-wrapper
 			flex-direction: column
 	/* (End) Callback Form */
+
+	/* (Start) Form Calc */
+	.form
+		&-calc
+			&-price
+				margin: 1rem 0
+	/* (End) Form Calc */
+
+	/* (Start) Card Page Swiper */
+	.swiper
+		&-product-main .swiper-product-image img
+			max-height: 220px
+	/* (End) Card Page Swiper */
 
 	/* (Start) Main Section */
 	.swiper-main
@@ -343,6 +428,15 @@
 		h2
 			margin-bottom: .5rem
 	/* (End) Main Section */
+
+	/* (Start) Reused Modal */
+	.modal
+		--bs-modal-width: 360px
+		--bs-modal-margin: 3.3rem
+		--bs-modal-padding: 0 1.5rem
+		--bs-modal-header-padding: 1.5rem 1.5rem 0
+		--bs-modal-footer-padding: 0 1.5rem 1.5rem
+	/* (End) Reused Modal */
 
 	/* (Start) Catalog Section */
 	.section-catalog
@@ -420,6 +514,39 @@
 			justify-content: space-between
 			padding: 1.5rem
 	/* (End) Map Section */
+
+	/* (Start) Category Section */
+	.category-main
+		&-wrapper
+			&.grid
+				.card-body
+					gap: 0.3rem
+	/* (End) Category Section */
+
+	
+	/* (Start) Accordion Section */
+	.section-accordion
+		&-title
+			h2
+				margin-bottom: .75rem
+	/* (End) Accordion Section */
+
+	/* (Start) Product Page */
+	.product
+		&-main
+			gap: .75rem
+			&-info
+				gap: .5rem
+				.product-description
+					max-width: 260px
+					margin-bottom: .5rem
+		&-advantages
+			padding: 2rem 0
+	/* (End) Product Page */
+
+	#makeCallModal
+		input
+			min-height: 40px
 
 	/* (Start) Footer */
 	.footer
@@ -530,9 +657,26 @@
 	// .block-cta
 	/* (End) Block CTA */
 
+	/* (Start) Articles Block */
+	.block-articles
+		&-content
+			flex-wrap: wrap
+		&-item
+			width: calc( 50% - 1rem )
+		&-image
+			img
+				max-height: 100px
+	/* (End) Articles Block */
+
+	/* (Start) Reused Modal */
+	.modal
+		--bs-modal-margin: 3.3rem 10vw
+	/* (End) Reused Modal */
+
 	/* (Start) Section */
 	.section
 		--section-inner-padding-x: 1.5rem
+		--section-category-padding-s: 0
 	/* (End) Section */
 
 	/* (Start) Callback Form */
@@ -544,6 +688,15 @@
 		.btn
 			max-width: unset
 	/* (End) Callback Form */
+
+	/* (Start) Card Page Swiper */
+	.swiper
+		&-product-main .swiper-product-image img
+			max-height: 70vw
+		&-product-thumb .swiper-slide
+			width: 20vw !important
+			height: 20vw
+	/* (End) Card Page Swiper */
 
 	/* (Start) Main Section */
 	.swiper-main
@@ -566,6 +719,11 @@
 			left: auto
 	/* (End) Main Pagination */
 	/* (End) Main Section */
+
+	/* (Start) Swiper Also Product */
+	.swiper-also
+		width: 85%
+	/* (End) Swiper Also Product */
 
 	/* (Start) Catalog Section */
 	.section-catalog
@@ -628,7 +786,20 @@
 
 	/* (Start) Category Section */
 	.category-header, .category-main, .category-bottom
-		padding-left: 0
+		padding-left: var(--section-category-padding-s)
+		
+	.category-header
+		justify-content: flex-end
+		&-left
+			display: none
+
+	.category-main
+		&-wrapper
+			&.grid
+				grid-template-columns: repeat(1, 1fr)
+				.card
+					&-info, &-btns 
+						width: auto
 	/* (End) Category Section */
 
 	/* (Start) Footer */
