@@ -124,6 +124,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const content = menuLists[index].querySelector(".list-group-inner");
         const isActive = menuLists[index].classList.contains("active");
 
+        if(isActive) {
+          return
+        }
         // Убираем класс active у всех элементов
         menuLists.forEach((menuList) => {
           menuList.classList.remove("active");
